@@ -14,7 +14,7 @@ var ShowingsComponent = (function () {
 ShowingsComponent = __decorate([
     core_1.Component({
         selector: 'showings',
-        template: "\n  <h1>Showings Page</h1>\n  ",
+        template: "\n  <h1>Showings Page</h1>\n  <div>\n    {{filmTitle}}\n    <img src={{filmImg}} />\n    {{filmDesc}}\n  </div>\n  ",
     })
 ], ShowingsComponent);
 exports.ShowingsComponent = ShowingsComponent;
