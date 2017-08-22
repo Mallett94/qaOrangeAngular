@@ -4,11 +4,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-//allows connection to mongoose and database
-var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var films = require('./routes/films');
 
 var app = express();
 
@@ -24,20 +23,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//connect to the data base
-var promise = mongoose.connect("mongodb://localhost/Films" , {useMongoClient : true});
-var db = mongoose.connection;
-mongoose.Promise = global.Promise;
-
-app.get('/', function(req, res){
-  res.sendFile(__dirname + "/frontend/src/index.html")
-});
-
-app.get('/api/Films' , function(req, res){
-	db.collection("Films").find({}).sort({}).toArray(function(err, docs){
-		res.json(docs);
-	});
-});
+app.use('/', index);
+app.use('/users', users);
+app.use('/films', films);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

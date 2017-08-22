@@ -14,7 +14,7 @@ var AboutComponent = (function () {
 AboutComponent = __decorate([
     core_1.Component({
         selector: 'about',
-        template: "\n  <h1>About This App</h1>\n  ",
+        template: "<h1>About This App</h1>",
     })
 ], AboutComponent);
 exports.AboutComponent = AboutComponent;
