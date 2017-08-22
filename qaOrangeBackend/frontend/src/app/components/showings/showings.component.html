@@ -1,0 +1,20 @@
+<h1>Showings Page</h1>
+<div class="mdl-color--grey-700">
+  <div *ngFor="let film of films" class="mdl-grid film-grid">
+    <div className="mdl-grid film-grid">
+      <div class="mdl-cell mdl-card mdl-color--black" style={{width:"255px"}} >
+		    <!-- <div className="mdl-card__media">
+		  	  <!img id="1" className="pic"  alt={this.props.film.film_name} src={this.props.film.img}/>
+		    </div> -->
+  		  <div class="mdl-card__title mdl-color-text--white">
+    			<h4 class="mdl-card__title-text">{{film.film_name}}</h4>
+    			<!img id="2" height="30px" width="30px" className="age-rating-logo" alt={this.props.film.rating_name} src={{film.age_rating}}/>
+		    </div>
+		    <div class="mdl-card__supporting-text mdl-color-text--white">{{film.quote}}</div>
+  		</div>
+    </div>
+  </div>
+</div>
+
+<!-- <h3 class="mdl-cell mdl-card mdl-color--black">{{film.film_name}}</h3>
+<p class="mdl-card__supporting-text mdl-color-text--white">{{film.quote}}</p> -->

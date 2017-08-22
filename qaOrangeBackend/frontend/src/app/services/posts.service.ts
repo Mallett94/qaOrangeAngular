@@ -12,4 +12,11 @@ export class PostsService {
     return this.http.get('https://jsonplaceholder.typicode.com/posts')
       .map(res => res.json());
   }
+
+  getFilms() {
+    console.log('gettings FilmList');
+    return this.http.get('../../json/Films_All.json')
+      .map(res => res.json());
+  }
+
 }

@@ -26,6 +26,7 @@ var UserComponent = (function () {
             this.showHobbies = false;
         this.postsService.getPosts().subscribe(function (posts) {
             _this.posts = posts;
+            console.log(posts);
         });
     }
     UserComponent.prototype.toggleHobbies = function () {

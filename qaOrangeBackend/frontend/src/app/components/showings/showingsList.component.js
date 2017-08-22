@@ -9,28 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var posts_service_1 = require("../../services/posts.service");
-var ShowingsComponent = (function () {
-    function ShowingsComponent(postsService) {
-        var _this = this;
-        this.postsService = postsService;
-        this.postsService.getFilms().subscribe(function (films) {
-            _this.films = films;
-            console.log(_this.films);
-        });
+var ShowingsListComponent = (function () {
+    function ShowingsListComponent() {
     }
-    return ShowingsComponent;
+    ;
+    return ShowingsListComponent;
 }());
-ShowingsComponent = __decorate([
+ShowingsListComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'showings',
-        templateUrl: 'showings.component.html',
-        providers: [posts_service_1.PostsService],
+        selector: 'showingsList',
+        templateUrl: 'showingsList.component.html',
     }),
-    __metadata("design:paramtypes", [posts_service_1.PostsService])
-], ShowingsComponent);
-exports.ShowingsComponent = ShowingsComponent;
-;
-//<FilmPageList films={this.state.films} />
-//# sourceMappingURL=showings.component.js.map
+    __metadata("design:paramtypes", [])
+], ShowingsListComponent);
+exports.ShowingsListComponent = ShowingsListComponent;
+//# sourceMappingURL=showingsList.component.js.map
