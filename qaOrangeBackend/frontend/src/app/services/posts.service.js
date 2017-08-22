@@ -20,6 +20,10 @@ var PostsService = (function () {
         return this.http.get('https://jsonplaceholder.typicode.com/posts')
             .map(function (res) { return res.json(); });
     };
+    PostsService.prototype.getLocations = function () {
+        return this.http.get('../../json/Locations.json')
+            .map(function (res) { return res.json(); });
+    };
     return PostsService;
 }());
 PostsService = __decorate([

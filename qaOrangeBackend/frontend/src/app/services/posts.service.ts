@@ -12,4 +12,9 @@ export class PostsService {
     return this.http.get('https://jsonplaceholder.typicode.com/posts')
       .map(res => res.json());
   }
+
+  getLocations(){
+    return this.http.get('../../json/Locations.json')
+      .map(res => res.json())
+  }
 }
