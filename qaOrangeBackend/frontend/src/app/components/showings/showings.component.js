@@ -18,7 +18,31 @@ var ShowingsComponent = (function () {
             _this.films = films;
             console.log(_this.films);
         });
+        this.isActive = false;
+        this.filmName = '';
+        this.filmDesc = '';
+        this.trailer = '';
+        this.comments = [''];
     }
+    ShowingsComponent.prototype.onSelect = function (film) {
+        this.toggleIsActive();
+        this.filmName = film.film_name;
+        this.filmDesc = film.film_description;
+        this.trailer = film.trailer;
+        this.comments = film.comments;
+    };
+    ShowingsComponent.prototype.onClose = function () {
+        this.toggleIsActive();
+        this.filmName = '';
+        this.filmDesc = '';
+        this.trailer = '';
+        this.comments = [''];
+    };
+    ShowingsComponent.prototype.toggleIsActive = function () {
+        console.log('isActive= ' + this.isActive);
+        this.isActive = !this.isActive;
+        console.log('isActive= ' + this.isActive);
+    };
     return ShowingsComponent;
 }());
 ShowingsComponent = __decorate([

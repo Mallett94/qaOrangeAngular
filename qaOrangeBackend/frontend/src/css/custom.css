@@ -3,3 +3,611 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
+
+table, tr, th, td {
+    border:2px solid white;
+}
+
+.payButton {
+	width:40%;
+
+}
+
+textarea, input, button {
+			outline: none;
+}
+
+#carousel{
+    max-width: 1100px;
+    max-height:450px;
+    margin: auto;
+}
+
+#carousel img#poster{
+    width:100%;
+    height: auto;
+    max-width:100%;
+    margin:auto;
+}
+
+.Display-film-tiles{
+    list-style-type: none;
+}
+
+.pic{
+    width:255px;
+    height:369px;
+}
+
+.age-rating{
+    position: relative;
+    left: 150px;
+    bottom:50px;
+}
+
+.age-rating-logo{
+    width:25%;
+}
+
+.film-grid{
+    align-items: center;
+    justify-content: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: inline-flex;
+}
+
+.film-tile-padding{
+    padding:20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.film-title{
+    padding-top:45px;
+}
+
+.container {
+    position:relative;
+    margin: auto;
+    height: 450px;
+    width: 270px;
+    padding: 10px;
+    display: inline-grid;
+}
+
+.background {
+    margin: auto;
+    height: 300px;
+    width: 255px;
+}
+
+#login-box .mdl-layout {
+    align-items: center;
+    justify-content: center;
+}
+#login-box .mdl-layout__content {
+    padding: 24px;
+    flex: none;
+}
+
+.mdl-card__title-text{
+    font-size: 18px;
+}
+
+.mdl-card {
+    display: inline-flex;
+    width: 515px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    height: 500px;
+    box-shadow: 3px 3px 8px -3px #000000;
+    border-radius: 5px;
+}
+
+#account-box {
+	position: absolute;
+    display: block;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    clear: both;
+    width: 100%;
+    height: 100%;
+	background: rgba(0, 0, 0, 0.75);
+}
+
+#account-box .mdl-layout {
+    align-items: center;
+    justify-content: center;
+}
+
+#account-box .mdl-layout__content {
+	  position: absolute;
+	  padding: 24px;
+	  display: grid;
+}
+
+#account-box .account-loading .mdl-layout__content {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+	padding: 0;
+    margin: -50px auto 0 -50px;
+}
+
+#account-box .mdl-card {
+    margin: auto;
+    width: 330px;
+    height: auto;
+    border-radius: 0px;
+	border: 1px solid rgb(70, 70, 70);
+    box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.5);
+}
+
+#account-box.my_account .mdl-card,
+#account-box.view_account .mdl-card {
+	margin: -100px auto auto;
+    max-width: 450px;
+	width: auto;
+    top: 50%;
+	background: #efefef;
+}
+
+#account-box.my_account .mdl-card__title,
+#account-box.view_account .mdl-card__title {
+	color: #EEE;
+	background: #000;
+	margin-bottom: 2px;
+}
+
+#account-box.my_account .mdl-card__title.accounts-block {
+	color: #656565;
+    background: #fff;
+    border: 1px solid #d2d2d2;
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
+    margin: 0;
+}
+
+#account-box.my_account .mdl-card__title.accounts-block:hover,
+#account-box.my_account .mdl-card__title.accounts-block:active {
+    border-bottom: 3px solid #ff4081;
+    background: #d8d8d8;
+    color: #000;
+	cursor:pointer;
+	-moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+#account-box.my_account .mdl-card__title.accounts-block i {
+	position: absolute;
+    right: 0;
+    margin: auto 10px;
+}
+
+#account-box.my_account .uname_text,
+#account-box.view_account .uname_text {
+    margin: auto 0 auto 5px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-shadow: 0px 0px 2px rgb(255, 255, 255);
+}
+
+#account-box.view_account .uname_text {
+	    margin: 0;
+}
+
+#account-box .mdl-button.mdl-button--colored {
+	color: #000;
+}
+
+#account-box .account-loading .mdl-card {
+    width: 100px;
+    min-height: 100px;
+	border: none;
+	background: rgba(0, 0, 0, 0);
+}
+
+#account-box .account-loading .mdl-card img {
+	    width: 100px;
+}
+
+#account-box .mdl-textfield {
+	  padding: 7px 0;
+}
+
+#account-box .mdl-textfield__input {
+    border: 1px solid #dedede;
+    transition: all .6s;
+    height: 30px;
+    padding-left: 5px;
+    margin-left: -2.55555555px;
+}
+
+#account-box .mdl-card__supporting-text,
+#account-box .mdl-textfield__input {
+	box-sizing: content-box;
+}
+
+#account-box .mdl-textfield__input:focus {
+    border: 1px solid #929292;
+    box-shadow: inset 0px 0px 12px -4px #000;
+}
+
+#account-box .mdl-textfield__input:focus {
+    color: #000;
+}
+
+.mdl-color--primary {
+	background-color: #000 !important;
+}
+
+#account-box .mdl-button:active, #account-box .mdl-button:hover  {
+    background-color: #000;
+    color: #fff;
+}
+
+#account-box .mdl-button {
+    border: 1px solid #000;
+    box-shadow: 0px 0px 6px -2px #000;
+	  display: grid;
+    width: 100%;
+}
+
+#account-box.my_account .mdl-button.mdl-button--colored,
+#account-box.view_account .mdl-button.mdl-button--colored {
+    width: 115px;
+    float: right;
+}
+
+#account-box.view_account table {
+	width: 100%;
+}
+
+#account-box.view_account table tr td:nth-child(1n) {
+	font-size: 15px;
+    border: 2px solid #f1f1f1;
+}
+
+#account-box.view_account table tr td:first-child {
+	font-weight: 600;
+}
+
+#account-box .account_error {
+	color: #d83a3a;
+    background: #e6e6e6;
+    border-bottom: 1px solid #c1c1c1;
+    margin-top: 2px;
+    padding: 5px 2px;
+    text-align: -webkit-center;
+    text-align: center;
+}
+
+#account-box .account_link {
+    position: relative;
+    display: table;
+    margin: 10px auto 0;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #d00;
+}
+
+#account-box .account_link:active, #account-box .account_link:hover {
+    color: #730000;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+}
+
+#account-box .accountClose {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 21px;
+    margin: 12.999999px;
+    padding: 0 5.2px;
+    color: #fff;
+    border: 2px solid #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    box-shadow: 1px 1px 6px 0px #000;
+	  cursor: pointer;
+	  -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+#account-box .accountClose:active, #account-box .accountClose:hover {
+	  border: 2px solid #e84141;
+    color: #e84141;
+}
+
+.drop-down-information{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    z-index: 9998;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 20px 20px 20px;
+}
+
+.popUpInfoBox{
+    position: inherit;
+    top: 0px;
+    width: 100%;
+}
+
+.Pop-Up-information{
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    height: 100%;
+    z-index: 9998;
+    background: rgba(0, 0, 0, 0.7);
+    color:#fff;
+    padding: 20px 20px 20px 20px;
+}
+
+.filmNameDisplay{
+    background-size: cover;
+    height: 275px;
+}
+
+.bookingHeading{
+    padding-left: 50px;
+    color: black;
+
+}
+
+.bookingHeading2{
+    padding-left: 50px;
+    padding-bottom: 10px;
+    color: black;
+    text-shadow: 1px 1px white;
+}
+.ticketDetailsSelection{
+    background: white;
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+
+.pageSplit{
+    margin:auto;
+}
+
+.setOut{
+    border: none;
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 20px;
+}
+
+.setOut tr td:first-child{
+   width:150px;
+}
+
+.setOut tr td:nth-child(2){
+     width:150px;
+}
+
+.setOut tr td:nth-child(3){
+
+}
+
+.setOut tr td:nth-child(4){
+
+}
+
+.setOut tr td:nth-child(5){
+     width:50px;
+}
+
+.setOut2{
+    border: none;
+    margin: auto;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.setOut2 tr td:first-child{
+    width:350px;
+}
+
+.totalTicks{
+    text-align: center;
+}
+
+.ticketInfo{
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+
+.dropdownBooking{
+    width: 200px;
+    height: 35px;
+    border-bottom-width: 1px;
+    border-bottom-color: deeppink;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 10px;
+    background: white;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    text-align: center;
+    text-align-last: center;
+    font-size: 14px;
+    background: #fcfcfc
+}
+
+.dropdownBooking:hover {
+    background-color: whitesmoke;
+}
+
+.basket{
+    width: 300px;
+    margin: auto;
+}
+
+.mdl-button--fab.mdl-button--mini-fab {
+    height: 30px;
+    min-width: 30px;
+    width: 20px;
+}
+
+.orderBtn{
+    height: 30px;
+    line-height: 30px;
+    font-size: small;
+}
+
+
+.loading-outer {
+	position: absolute;
+    color: rgb(255, 255, 255);
+    display: block;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.72);
+}
+
+.loading-inner {
+	color: rgb(255, 255, 255);
+    position: relative;
+    text-align: -webkit-center;
+    text-align: center;
+    display: block;
+    top: 50%;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    margin: -50px auto 0;
+}
+
+
+.bookNowButtonDiv{
+    display: block;
+    padding-left: 50%;
+	margin-top: 5%;
+	font-size:40px;
+}
+
+.filmInfoCloseButton{
+	margin-top: 20px;
+	margin-left: 80%;
+	position: absolute;
+    font-size: 20px;
+    color: #fff;
+    border: 2px solid #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    box-shadow: 1px 1px 6px 0px #000;
+    cursor: pointer;
+    -moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.clickable-span {
+	cursor: pointer;
+}
+
+.mdl-button--accent.mdl-button--accent.mdl-button--raised img:first-child {
+	width: 26px;
+	margin-right: -2px;
+}
+.mdl-button--accent.mdl-button--accent.mdl-button--raised .userText {
+	display: inline-block;
+    vertical-align: middle;
+}
+
+.dropdown-menu {
+	color: #000;
+	background: #efefef;
+	min-width: 116px;
+	max-width: 116px;
+	-moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.dropdown-menu li.user-item i, .dropdown .mdl-button .material-icons {
+	padding-right: 3px;
+	font-size: 23px;
+}
+
+.dropdown-menu li {
+	display: flex;
+    font-size: 13px;
+    color: #656565;
+    background: #fff;
+    border-top: 2px solid rgba(230, 230, 230, 0.42);
+    border-bottom: 2px solid rgba(183, 183, 183, 0.42);
+    margin: 0;
+    cursor: pointer;
+    padding: 5px;
+    -moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.dropdown-menu li:hover, .dropdown-menu li:active {
+    border-bottom: 2px solid #ff4081;
+    background: #d8d8d8;
+    color: #000;
+}
+
+.mdl-grid.thread h1, .mdl-grid.thread h4 {
+	cursor:pointer;
+}
+
+.mdl-mini-footer {
+	padding: 25px 0 27px;
+    display: block;
+    width: 100%;
+}
+
+.dropdownMap{
+    width: 400px;
+    height: 35px;
+    border-bottom-width: 1px;
+    border-bottom-color: deeppink;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 10px;
+    background: white;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    text-align: center;
+    text-align-last: center;
+    font-size: 18px;
+    background: #fcfcfc
+}
+
+.mdl-mini-footer .footer-container {
+    display: table;
+    max-width: 1280px;
+    margin: auto;
+    height: auto;
+}
+.mdl-mini-footer .footer-container .mdl-mini-footer__left-section,
+.mdl-mini-footer .footer-container .mdl-mini-footer__right-section {
+	margin: 0 20px;
+}
+
+@media screen and (max-width: 1024px) {
+	.mdl-mini-footer {
+		display: none;
+	}
+}

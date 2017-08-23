@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent }  from './app.component';
 import { UserComponent } from './components/test/user.component';
 import { ShowingsComponent } from './components/showings/showings.component';
-import { ShowingsListComponent } from './components/showings/showingsList.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { routing } from './routing/app.routing';
@@ -14,7 +13,7 @@ import { routing } from './routing/app.routing';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, routing ],
-  declarations: [ AppComponent, UserComponent, ShowingsComponent, ShowingsListComponent, AboutComponent, ContactComponent ],
+  declarations: [ AppComponent, UserComponent, ShowingsComponent, AboutComponent, ContactComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
