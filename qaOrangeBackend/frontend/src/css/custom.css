@@ -207,7 +207,7 @@ table, tr, th, td {
 
 #account-box .accountClose:active, #account-box .accountClose:hover {
 	  border: 2px solid #e84141;
-    color: #e84141;
+    background-color: pink;
 }
 
 .drop-down-information{

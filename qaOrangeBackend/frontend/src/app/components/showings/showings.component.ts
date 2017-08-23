@@ -1,5 +1,6 @@
 import { Component, Directive } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
+import { DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   moduleId: module.id,
@@ -13,11 +14,11 @@ export class ShowingsComponent  {
   isActive: boolean;
   filmName: string;
   filmDesc: string;
-  trailer: string;
+  trailer;
   comments: string[];
 
 
-  constructor(private postsService: PostsService){
+  constructor(private postsService: PostsService, public sanitizer: DomSanitizer){
     this.postsService.getFilms().subscribe(films => {
       this.films = films;
       console.log(this.films);
@@ -25,7 +26,7 @@ export class ShowingsComponent  {
     this.isActive = false;
     this.filmName = '';
     this.filmDesc = '';
-    this.trailer = '';
+    this.trailer = undefined;
     this.comments = [''];
   }
 
@@ -33,7 +34,7 @@ export class ShowingsComponent  {
     this.toggleIsActive();
     this.filmName = film.film_name;
     this.filmDesc = film.film_description;
-    this.trailer = film.trailer;
+    this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(film.trailer);
     this.comments = film.comments;
   }
 
@@ -41,7 +42,7 @@ export class ShowingsComponent  {
     this.toggleIsActive();
     this.filmName = '';
     this.filmDesc = '';
-    this.trailer = '';
+    this.trailer = undefined;
     this.comments = [''];
 	}
 

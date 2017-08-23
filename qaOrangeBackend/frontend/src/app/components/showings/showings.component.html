@@ -1,5 +1,5 @@
 <h1>Showings Page</h1>
-<div class="mdl-color--grey-700" >
+<div class="mdl-color--grey-700" style="max-width:1150px" >
   <div *ngFor="let film of films; let i=index" class="mdl-grid film-grid"  >
 
     <div class="mdl-cell mdl-card mdl-color--black" style="width:255px;" (click)="onSelect(film)" >
@@ -18,13 +18,16 @@
       <div class="popUpInfoBox" *ngIf="isActive">
 
   			<div class="Pop-Up-information" >
-  				<div class="filmInfoCloseButton" (click)="toggleIsActive()" >
-  					<span class="accountClose" >X</span>
+  				<div class="filmInfoCloseButton"  >
+  					<button class="accountClose" style="color: black" (click)="onClose()" >X</button>
   				</div>
   				<h2>{{filmName}}</h2>
-  				<span>{{filmDesc}}</span>
-  				<iframe title="trailer" width="560" height="315" src={{trailer}} frameBorder="0"></iframe>
-  				<a routerLink to="/bookings" activeclass="active">
+  				<div>{{filmDesc}}</div>
+          <div>
+  				      <iframe title="trailer" width="800" height="450" [src]="trailer" frameBorder="0" allowfullscreen></iframe>
+          </div>
+
+          <a routerLink="/booking" activeclass="active">
   					<div class="bookNowButtonDiv">
   						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" >Book now</button>
   					</div>

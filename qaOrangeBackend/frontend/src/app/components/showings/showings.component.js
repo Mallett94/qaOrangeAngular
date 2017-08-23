@@ -10,10 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var posts_service_1 = require("../../services/posts.service");
+var platform_browser_1 = require("@angular/platform-browser");
 var ShowingsComponent = (function () {
-    function ShowingsComponent(postsService) {
+    function ShowingsComponent(postsService, sanitizer) {
         var _this = this;
         this.postsService = postsService;
+        this.sanitizer = sanitizer;
         this.postsService.getFilms().subscribe(function (films) {
             _this.films = films;
             console.log(_this.films);
@@ -21,21 +23,21 @@ var ShowingsComponent = (function () {
         this.isActive = false;
         this.filmName = '';
         this.filmDesc = '';
-        this.trailer = '';
+        this.trailer = undefined;
         this.comments = [''];
     }
     ShowingsComponent.prototype.onSelect = function (film) {
         this.toggleIsActive();
         this.filmName = film.film_name;
         this.filmDesc = film.film_description;
-        this.trailer = film.trailer;
+        this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(film.trailer);
         this.comments = film.comments;
     };
     ShowingsComponent.prototype.onClose = function () {
         this.toggleIsActive();
         this.filmName = '';
         this.filmDesc = '';
-        this.trailer = '';
+        this.trailer = undefined;
         this.comments = [''];
     };
     ShowingsComponent.prototype.toggleIsActive = function () {
@@ -52,7 +54,7 @@ ShowingsComponent = __decorate([
         templateUrl: 'showings.component.html',
         providers: [posts_service_1.PostsService],
     }),
-    __metadata("design:paramtypes", [posts_service_1.PostsService])
+    __metadata("design:paramtypes", [posts_service_1.PostsService, platform_browser_1.DomSanitizer])
 ], ShowingsComponent);
 exports.ShowingsComponent = ShowingsComponent;
 ;
