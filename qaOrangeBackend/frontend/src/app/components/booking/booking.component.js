@@ -15,18 +15,72 @@ var BookingComponent = (function () {
         this.adultTicketQuantity = 0;
         this.kidsTicketQuantity = 0;
         this.seniorTicketQuantity = 0;
+        this.totalTicketQuantity = 0;
+        this.totalProgress = 0;
+        this.vProgress = 0;
+        this.dProgress = 0;
+        this.timeProgress = 0;
+        this.tickProgress = 0;
+        this.sProgress = 0;
+        this.progressComplete = false;
     }
     BookingComponent.prototype.addToOrder = function () {
         this.showBasket = true;
     };
     BookingComponent.prototype.resetAdults = function () {
         this.adultTicketQuantity = 0;
+        return this.checkTotalTickets();
     };
     BookingComponent.prototype.resetKids = function () {
         this.kidsTicketQuantity = 0;
+        return this.checkTotalTickets();
     };
     BookingComponent.prototype.resetSeniors = function () {
         this.seniorTicketQuantity = 0;
+        return this.checkTotalTickets();
+    };
+    BookingComponent.prototype.checkVProgress = function (v) {
+        {
+            (v.value == null) ? this.vProgress = 20 : this.vProgress = 0;
+        }
+        return this.progressBar();
+    };
+    BookingComponent.prototype.checkDProgress = function (d) {
+        {
+            (d.value == null) ? this.dProgress = 20 : this.dProgress = 0;
+        }
+        return this.progressBar();
+    };
+    BookingComponent.prototype.checkTimeProgress = function (t) {
+        {
+            (t.value == null) ? this.timeProgress = 20 : this.timeProgress = 0;
+        }
+        return this.progressBar();
+    };
+    BookingComponent.prototype.checkTotalTickets = function () {
+        this.totalTicketQuantity = this.adultTicketQuantity + this.kidsTicketQuantity + this.seniorTicketQuantity;
+        return this.checkTickProgress();
+    };
+    BookingComponent.prototype.checkTickProgress = function () {
+        {
+            (this.totalTicketQuantity == 0) ? this.tickProgress = 0 : this.tickProgress = 20;
+        }
+        return this.progressBar();
+    };
+    BookingComponent.prototype.checkSProgress = function (s) {
+        {
+            s.value == null ? this.sProgress = 20 : this.sProgress = 0;
+        }
+        return this.progressBar();
+    };
+    BookingComponent.prototype.progressBar = function () {
+        this.totalProgress = this.vProgress + this.dProgress + this.timeProgress + this.tickProgress + this.sProgress;
+        return this.checkProgressComplete();
+    };
+    BookingComponent.prototype.checkProgressComplete = function () {
+        {
+            (this.totalProgress == 100) ? this.progressComplete = true : this.progressComplete = false;
+        }
     };
     return BookingComponent;
 }());
