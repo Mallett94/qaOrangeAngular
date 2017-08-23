@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PostsService {
+  //_data;
   constructor(private http: Http) {
     console.log('PostsService Initialized...')
   }
@@ -17,6 +18,14 @@ export class PostsService {
     console.log('gettings FilmList');
     return this.http.get('../../json/Films_All.json')
       .map(res => res.json());
+  }
+
+  getLocations(){
+    return this.http.get('../../json/Locations.json')
+      .map(res => res.json())
+      // .map( (data) =>
+      // this._data = data
+    //)
   }
 
 }

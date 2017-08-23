@@ -14,7 +14,7 @@ var ContactComponent = (function () {
 ContactComponent = __decorate([
     core_1.Component({
         selector: 'contact',
-        template: "\n  <h1>Leave some feeedback!</h1>\n  ",
+        template: "\n  <h3>Contacts</h3>\n  <div>\n    Our contact details are: \n      <p>phone number: 01234 567890</p>\n      <p>email: QACinema@email.com</p>\n  </div>\n  ",
     })
 ], ContactComponent);
 exports.ContactComponent = ContactComponent;

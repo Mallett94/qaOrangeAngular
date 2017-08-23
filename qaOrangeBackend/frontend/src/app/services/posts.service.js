@@ -12,6 +12,7 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 var PostsService = (function () {
+    //_data;
     function PostsService(http) {
         this.http = http;
         console.log('PostsService Initialized...');
@@ -24,6 +25,13 @@ var PostsService = (function () {
         console.log('gettings FilmList');
         return this.http.get('../../json/Films_All.json')
             .map(function (res) { return res.json(); });
+    };
+    PostsService.prototype.getLocations = function () {
+        return this.http.get('../../json/Locations.json')
+            .map(function (res) { return res.json(); });
+        // .map( (data) =>
+        // this._data = data
+        //)
     };
     return PostsService;
 }());
