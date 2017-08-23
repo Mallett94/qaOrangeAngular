@@ -4,6 +4,8 @@ var user_component_1 = require("../components/test/user.component");
 var showings_component_1 = require("../components/showings/showings.component");
 var about_component_1 = require("../components/about/about.component");
 var contact_component_1 = require("../components/contact/contact.component");
+var forum_component_1 = require("../components/forum/forum.component");
+var thread_component_1 = require("../components/forum/thread.component");
 var appRoutes = [
     {
         path: '',
@@ -20,6 +22,14 @@ var appRoutes = [
     {
         path: 'contact',
         component: contact_component_1.ContactComponent
+    },
+    {
+        path: 'forum',
+        component: forum_component_1.ForumComponent
+    },
+    {
+        path: 'thread/:id',
+        component: thread_component_1.ThreadComponent
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

@@ -15,6 +15,8 @@ var showings_component_1 = require("./components/showings/showings.component");
 var about_component_1 = require("./components/about/about.component");
 var contact_component_1 = require("./components/contact/contact.component");
 var app_routing_1 = require("./routing/app.routing");
+var forum_component_1 = require("./components/forum/forum.component");
+var thread_component_1 = require("./components/forum/thread.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,7 +25,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
-        declarations: [app_component_1.AppComponent, user_component_1.UserComponent, showings_component_1.ShowingsComponent, about_component_1.AboutComponent, contact_component_1.ContactComponent],
+        declarations: [app_component_1.AppComponent, user_component_1.UserComponent, showings_component_1.ShowingsComponent, about_component_1.AboutComponent, contact_component_1.ContactComponent, forum_component_1.ForumComponent, thread_component_1.ThreadComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
