@@ -7,6 +7,48 @@ label{
     align-items: center;
     margin-top: 350px;
 }
+
+.sitemap{
+    background:#343a40;
+}
+.sitemapList {
+    margin:0;
+	padding:0;
+	float:left;
+	width:100%;
+}
+.sitemapList li {
+    display: inline;
+    padding: 0px;
+    margin: 0;
+    font-size: 0.9em;
+    background:#343a40;
+}
+.sitemapList a:link,
+.sitemapList a:visited {
+    color:#9a9d9e;
+	padding:40px 20px 20px 20px;
+	float:left;
+	width:auto;
+	text-decoration:none;
+}
+.sitemapList a:hover,
+.sitemapList a:focus {
+	color:white;
+}
+.copy{
+    text-align: center;
+    font-size: 0.8em;
+    color: #9a9d9e;
+    background: #343a40;
+    margin:0;
+}
+.siteTable{
+    display: table;
+    margin: 0 auto;
+    
+}
+
 table, tr, th, td {
     border: none;
 }
