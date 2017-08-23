@@ -1,3 +1,4 @@
+//nathan
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -21,7 +22,7 @@ export class ApiService {
       .map(res => res.json());
   }
 
-  getLocations(){
+  getLocations(){ //michael
     return this.http.get('../../json/Locations.json')
       .map(res => res.json())
       // .map( (data) =>

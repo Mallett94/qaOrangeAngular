@@ -1,3 +1,4 @@
+//nathan
 import { Component, Directive } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
@@ -64,4 +65,3 @@ interface Film {
   trailer: string;
   comments: [string]
 }
-//<FilmPageList films={this.state.films} />

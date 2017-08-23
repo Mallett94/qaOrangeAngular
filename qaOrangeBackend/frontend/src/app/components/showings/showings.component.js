@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+//nathan
 var core_1 = require("@angular/core");
 var api_service_1 = require("../../services/api.service");
 var ShowingsComponent = (function () {
@@ -56,5 +57,4 @@ ShowingsComponent = __decorate([
 ], ShowingsComponent);
 exports.ShowingsComponent = ShowingsComponent;
 ;
-//<FilmPageList films={this.state.films} />
 //# sourceMappingURL=showings.component.js.map
