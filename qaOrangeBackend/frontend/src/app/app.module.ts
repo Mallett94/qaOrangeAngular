@@ -8,11 +8,31 @@ import { UserComponent } from './components/test/user.component';
 import { ShowingsComponent } from './components/showings/showings.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BookingComponent } from './components/booking/booking.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 import { routing } from './routing/app.routing';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpModule, routing ],
-  declarations: [ AppComponent, UserComponent, ShowingsComponent, AboutComponent, ContactComponent ],
-  bootstrap:    [ AppComponent ]
+  imports:      [ 
+    BrowserModule, 
+    FormsModule, 
+    HttpModule, 
+    routing 
+  ],
+  declarations: [ 
+    AppComponent, 
+    UserComponent, 
+    ShowingsComponent, 
+    AboutComponent, 
+    ContactComponent,
+    NavbarComponent,
+    BookingComponent,
+    FooterComponent 
+  ],
+  bootstrap:    [ 
+    AppComponent 
+  ]
 })
 export class AppModule { }

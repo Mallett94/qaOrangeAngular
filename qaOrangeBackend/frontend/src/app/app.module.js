@@ -14,6 +14,9 @@ var user_component_1 = require("./components/test/user.component");
 var showings_component_1 = require("./components/showings/showings.component");
 var about_component_1 = require("./components/about/about.component");
 var contact_component_1 = require("./components/contact/contact.component");
+var navbar_component_1 = require("./components/navbar/navbar.component");
+var booking_component_1 = require("./components/booking/booking.component");
+var footer_component_1 = require("./components/footer/footer.component");
 var app_routing_1 = require("./routing/app.routing");
 var AppModule = (function () {
     function AppModule() {
@@ -22,9 +25,25 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
-        declarations: [app_component_1.AppComponent, user_component_1.UserComponent, showings_component_1.ShowingsComponent, about_component_1.AboutComponent, contact_component_1.ContactComponent],
-        bootstrap: [app_component_1.AppComponent]
+        imports: [
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            http_1.HttpModule,
+            app_routing_1.routing
+        ],
+        declarations: [
+            app_component_1.AppComponent,
+            user_component_1.UserComponent,
+            showings_component_1.ShowingsComponent,
+            about_component_1.AboutComponent,
+            contact_component_1.ContactComponent,
+            navbar_component_1.NavbarComponent,
+            booking_component_1.BookingComponent,
+            footer_component_1.FooterComponent
+        ],
+        bootstrap: [
+            app_component_1.AppComponent
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;

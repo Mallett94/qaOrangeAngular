@@ -5,6 +5,7 @@ import { UserComponent } from '../components/test/user.component';
 import { ShowingsComponent } from '../components/showings/showings.component';
 import { AboutComponent } from '../components/about/about.component';
 import { ContactComponent } from '../components/contact/contact.component';
+import { BookingComponent } from '../components/booking/booking.component';
 
 const appRoutes: Routes = [
   {
@@ -22,6 +23,10 @@ const appRoutes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'booking',
+    component: BookingComponent
   }
 ];
 
