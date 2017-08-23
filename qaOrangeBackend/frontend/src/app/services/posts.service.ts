@@ -18,5 +18,13 @@ export class PostsService {
     return this.http.get('../../json/Films_All.json')
       .map(res => res.json());
   }
+  
+  getLocations(){
+    return this.http.get('/Assets/json/Locations.json')
+      .map(res => res.json())
+      .map( (data) => 
+      this._data = data
+    )
+  }
 
 }
