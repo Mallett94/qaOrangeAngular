@@ -14,8 +14,8 @@ var AboutComponent = (function () {
     function AboutComponent(postsService) {
         var _this = this;
         this.postsService = postsService;
-        this.postsService.getLocations().subscribe(function (Locations) {
-            _this.locations = Locations;
+        this.postsService.getLocations().subscribe(function (locations) {
+            _this.locations = locations;
         });
     }
     return AboutComponent;
@@ -23,7 +23,7 @@ var AboutComponent = (function () {
 AboutComponent = __decorate([
     core_1.Component({
         selector: 'about',
-        template: "\n  <h3>About Us</h3>\n  <div>\n    We have various locations:\n    <ul>\n      <li *ngFor=\"let location of locations; let i = index\">\n        {{location}}\n      </li>\n    </ul>\n  </div>\n  ",
+        template: "\n  <h3>About Us</h3>\n  <div>\n    We have Cinemas at various locations:\n    <ul>\n      <li *ngFor=\"let location of locations\">\n        {{location.location}}\n      </li>\n    </ul>\n  </div>\n  ",
         providers: [posts_service_1.PostsService]
     }),
     __metadata("design:paramtypes", [posts_service_1.PostsService])
