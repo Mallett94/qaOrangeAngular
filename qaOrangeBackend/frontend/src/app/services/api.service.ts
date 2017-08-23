@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+
 @Injectable()
-export class PostsService {
+export class ApiService {
   //_data;
   constructor(private http: Http) {
-    console.log('PostsService Initialized...')
+    console.log('apiService Initialized...')
   }
 
   getPosts() {

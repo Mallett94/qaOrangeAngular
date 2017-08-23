@@ -13,6 +13,7 @@ import { BookingComponent } from './components/booking/booking.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { routing } from './routing/app.routing';
+import { SafePipe } from './services/pipe.service';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { routing } from './routing/app.routing';
     ContactComponent,
     NavbarComponent,
     BookingComponent,
-    FooterComponent
+    FooterComponent,
+    SafePipe
   ],
   bootstrap:    [
     AppComponent

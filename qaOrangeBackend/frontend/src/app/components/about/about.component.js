@@ -9,12 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var posts_service_1 = require("../../services/posts.service");
+var api_service_1 = require("../../services/api.service");
 var AboutComponent = (function () {
-    function AboutComponent(postsService) {
+    function AboutComponent(apiService) {
         var _this = this;
-        this.postsService = postsService;
-        this.postsService.getLocations().subscribe(function (locations) {
+        this.apiService = apiService;
+        this.apiService.getLocations().subscribe(function (locations) {
             _this.locations = locations;
         });
     }
@@ -24,9 +24,9 @@ AboutComponent = __decorate([
     core_1.Component({
         selector: 'about',
         template: "\n  <h3>About Us</h3>\n  <div>\n    We have Cinemas at various locations:\n    <ul>\n      <li *ngFor=\"let location of locations\">\n        {{location.location}}\n      </li>\n    </ul>\n  </div>\n  ",
-        providers: [posts_service_1.PostsService]
+        providers: [api_service_1.ApiService]
     }),
-    __metadata("design:paramtypes", [posts_service_1.PostsService])
+    __metadata("design:paramtypes", [api_service_1.ApiService])
 ], AboutComponent);
 exports.AboutComponent = AboutComponent;
 ;

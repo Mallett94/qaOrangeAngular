@@ -18,6 +18,7 @@ var navbar_component_1 = require("./components/navbar/navbar.component");
 var booking_component_1 = require("./components/booking/booking.component");
 var footer_component_1 = require("./components/footer/footer.component");
 var app_routing_1 = require("./routing/app.routing");
+var pipe_service_1 = require("./services/pipe.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -39,7 +40,8 @@ AppModule = __decorate([
             contact_component_1.ContactComponent,
             navbar_component_1.NavbarComponent,
             booking_component_1.BookingComponent,
-            footer_component_1.FooterComponent
+            footer_component_1.FooterComponent,
+            pipe_service_1.SafePipe
         ],
         bootstrap: [
             app_component_1.AppComponent

@@ -24,7 +24,7 @@
   				<h2>{{filmName}}</h2>
   				<div>{{filmDesc}}</div>
           <div>
-  				      <iframe title="trailer" width="800" height="450" [src]="trailer" frameBorder="0" allowfullscreen></iframe>
+  				      <iframe title="trailer" width="800" height="450" [src]="trailer | safe" frameBorder="0" allowfullscreen></iframe>
           </div>
 
           <a routerLink="/booking" activeclass="active">

@@ -1,12 +1,11 @@
 import { Component, Directive } from '@angular/core';
-import { PostsService } from '../../services/posts.service';
-import { DomSanitizer} from '@angular/platform-browser';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   moduleId: module.id,
   selector: 'showings',
   templateUrl: 'showings.component.html',
-  providers: [PostsService],
+  providers: [ApiService],
 
 })
 export class ShowingsComponent  {
@@ -18,8 +17,8 @@ export class ShowingsComponent  {
   comments: string[];
 
 
-  constructor(private postsService: PostsService, public sanitizer: DomSanitizer){
-    this.postsService.getFilms().subscribe(films => {
+  constructor(private apiService:ApiService){
+    this.apiService.getFilms().subscribe(films => {
       this.films = films;
       console.log(this.films);
     });
@@ -34,7 +33,7 @@ export class ShowingsComponent  {
     this.toggleIsActive();
     this.filmName = film.film_name;
     this.filmDesc = film.film_description;
-    this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(film.trailer);
+    this.trailer = film.trailer;
     this.comments = film.comments;
   }
 

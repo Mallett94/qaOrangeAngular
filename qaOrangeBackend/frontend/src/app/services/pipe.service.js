@@ -21,7 +21,8 @@ var SafePipe = (function () {
 }());
 SafePipe = __decorate([
     core_1.Pipe({ name: 'safe' }),
+    core_1.Injectable(),
     __metadata("design:paramtypes", [platform_browser_1.DomSanitizer])
 ], SafePipe);
 exports.SafePipe = SafePipe;
-//# sourceMappingURL=pipe.component.js.map
+//# sourceMappingURL=pipe.service.js.map

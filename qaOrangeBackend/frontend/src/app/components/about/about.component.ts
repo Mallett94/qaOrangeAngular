@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {PostsService} from '../../services/posts.service'
+import { ApiService } from '../../services/api.service'
 
 @Component({
   selector: 'about',
@@ -14,14 +14,14 @@ import {PostsService} from '../../services/posts.service'
     </ul>
   </div>
   `,
-  providers:[PostsService]
+  providers:[ApiService]
 })
 
 export class AboutComponent  {
   locations : Location[];
 
-  constructor(private postsService: PostsService){
-    this.postsService.getLocations().subscribe(locations =>{
+  constructor(private apiService: ApiService){
+    this.apiService.getLocations().subscribe(locations =>{
       this.locations = locations;
     })
   }
