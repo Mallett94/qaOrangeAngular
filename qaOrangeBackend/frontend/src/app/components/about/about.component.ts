@@ -12,9 +12,6 @@ import {PostsService} from '../../services/posts.service'
         {{location.location}}
       </li>
     </ul>
-    <agm-map [latitude]="lat" [longitude]="lng">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-    </agm-map>
   </div>
   `,
   providers:[PostsService]
