@@ -1,0 +1,119 @@
+<div class="jumbotron">
+    <h1>Booking</h1> 
+    <p>Choose from all the latest films. In fact, why don't you treat someone.</p> 
+</div>
+
+<div class = 'bookingSystem'>    
+    <div class = 'ticketDetailsSelection'>
+    <table class= 'setOut'>      
+        <tr>
+            <div class = "venueAndTimeSelection">
+                <td>
+                    <label>Venue</label>
+                </td>
+                <td>
+                    <select class = 'dropdownBooking' name='location' [(ngModel)]='location'>
+                    <option value="Please choose a cinema" selected>-</option>
+                    <option value="London" >London</option>
+                    <option value="Manchester">Manchester</option>
+                    <option value="Edinburgh">Edinburgh</option>
+                    </select>
+                </td>
+            <tr>
+                <td>
+                    <label>Day</label>
+                </td>
+                <td>
+                    <select class = 'dropdownBooking' name='day' [(ngModel)]='day'>
+                    <option value="Please choose a cinema" selected>-</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Time</label>
+                </td>
+                <td>
+                    <select class = 'dropdownBooking' name='time' [(ngModel)]='time'>
+                    <option value="Please choose a cinema" selected>-</option>
+                    <option value="12:00pm">12:00pm</option>
+                        <option value="1:00pm">1:00pm</option>
+                        <option value="2:00pm">2:00pm</option>
+                        <option value="3:00pm">3:00pm</option>
+                    </select>
+                </td>
+            </tr>
+            </div>
+        </tr>
+
+        <tr>
+            <div class = "ticketQuantitySelection">
+                <tr><td><label>Adult Tickets </label></td>
+                <td><input class = 'dropdownBooking' type='text' name='adultTicketQuantity' [(ngModel)]='adultTicketQuantity'/></td>
+                <td><button class = "removeButton" (click)="resetAdults()">Remove</button></td></tr>        
+                
+                <tr><td><label>Kids Tickets </label></td>
+                <td><input class = 'dropdownBooking' type='text' name='kidsTicketQuantity' [(ngModel)]='kidsTicketQuantity'/></td>
+                <td><button class = "removeButton" (click)="resetKids()">Remove</button></td></tr>
+                
+                <tr><td><label>Senior Tickets </label></td>
+                <td><input class = 'dropdownBooking' type='text' name='seniorTicketQuantity' [(ngModel)]='seniorTicketQuantity'/></td>
+                <td><button class = "removeButton" (click)="resetSeniors()">Remove</button></td></tr>
+            </div>
+        </tr>
+        <tr>
+            <div class = "seatSelection">
+                <td>
+                        <label>Select Seating Area</label>
+                </td>
+                <td>
+                            <select class = 'dropdownBooking' name='seats' [(ngModel)]='seats'>
+                            <option value="blank" selected>-</option>
+                            <option value="Front Block">Front</option>
+                            <option value="Middle Block">Middle</option>
+                            <option value="Rear Block">Rear</option>
+                            </select>
+                </td>
+            </div>
+        </tr>
+    </table>
+
+    <br />
+        
+        <div class = "displayTicketSelection">
+        <div class = 'basket'>    
+            <br/>
+            <hr class = 'pageSplit' width = '75%'/>
+                <table class = 'setOut2'>      
+                    <tr>
+                        <td>
+            <!--    {this.state.isTotalActive ? -->
+                        <div class = "totalTicks">
+                            <h4>You would like {{adultTicketQuantity*1 + kidsTicketQuantity*1 + seniorTicketQuantity*1 | number}} ticket(s).</h4>
+                            <div class = 'ticketInfo' >
+                                Cinema: {{location}}<br />
+                                Time: {{day}} at {{time}}<br />
+                                Seats: {{seats}}<br />
+                                Price: £{{(adultTicketQuantity * 9.90) + (kidsTicketQuantity * 5.90) + (seniorTicketQuantity * 7.90) | number:'1.2-2'}}
+                            </div>
+                        </div> 
+                <!--  : <h4>Your basket is empty.</h4>} -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class = 'reviewAndPayButton'>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">REVIEW & PAY
+                            </button>
+                        </div>
+                    </tr>
+                </table>
+        </div> 
+        </div>
+</div>
