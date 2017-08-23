@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { routing } from './routing/app.routing';
 
+
 @NgModule({
   imports:      [ 
     BrowserModule, 

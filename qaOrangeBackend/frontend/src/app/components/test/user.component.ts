@@ -30,6 +30,7 @@ export class UserComponent {
 
     this.postsService.getPosts().subscribe(posts => {
       this.posts = posts;
+      console.log(posts);
 
     });
   }
