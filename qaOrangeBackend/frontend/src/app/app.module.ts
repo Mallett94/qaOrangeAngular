@@ -11,10 +11,11 @@ import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ForumComponent } from './components/forum/forum.component';
+import { ThreadComponent } from './components/forum/thread.component';
 
 import { routing } from './routing/app.routing';
 import { SafePipe } from './services/pipe.service';
-
 
 @NgModule({
   imports:      [
@@ -32,10 +33,13 @@ import { SafePipe } from './services/pipe.service';
     NavbarComponent,
     BookingComponent,
     FooterComponent,
-    SafePipe
+    SafePipe,
+    ForumComponent,
+    ThreadComponent
   ],
   bootstrap:    [
     AppComponent
   ]
+
 })
 export class AppModule { }
