@@ -14,8 +14,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './components/homepage/homepage.component';
 import  { PaypalComponent } from './components/paypal/paypal.component';
 import { FilmsCardComponent} from './components/films-card/films-card.component';
+import { ForumComponent } from './components/forum/forum.component';
+import { ThreadComponent } from './components/forum/thread.component';
 
 import { routing } from './routing/app.routing';
+import { SafePipe } from './services/pipe.service';
 
 @NgModule({
   imports:      [
@@ -35,10 +38,14 @@ import { routing } from './routing/app.routing';
     FooterComponent,
     HomePageComponent,
     FilmsCardComponent,
-    PaypalComponent
+    PaypalComponent,
+    SafePipe,
+    ForumComponent,
+    ThreadComponent
   ],
   bootstrap:    [
     AppComponent
   ]
+
 })
 export class AppModule { }

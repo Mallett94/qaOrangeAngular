@@ -9,22 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
-require("rxjs/add/operator/map");
-var PostsService = (function () {
-    function PostsService(http) {
-        this.http = http;
-        console.log('PostsService Initialized...');
+var platform_browser_1 = require("@angular/platform-browser");
+var SafePipe = (function () {
+    function SafePipe(sanitizer) {
+        this.sanitizer = sanitizer;
     }
-    PostsService.prototype.getPosts = function () {
-        return this.http.get('https://jsonplaceholder.typicode.com/posts')
-            .map(function (res) { return res.json(); });
+    SafePipe.prototype.transform = function (url) {
+        return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     };
-    return PostsService;
+    return SafePipe;
 }());
-PostsService = __decorate([
+SafePipe = __decorate([
+    core_1.Pipe({ name: 'safe' }),
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], PostsService);
-exports.PostsService = PostsService;
-//# sourceMappingURL=posts.service.js.map
+    __metadata("design:paramtypes", [platform_browser_1.DomSanitizer])
+], SafePipe);
+exports.SafePipe = SafePipe;
+//# sourceMappingURL=pipe.service.js.map

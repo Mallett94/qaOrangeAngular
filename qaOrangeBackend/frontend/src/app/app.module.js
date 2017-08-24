@@ -20,7 +20,10 @@ var footer_component_1 = require("./components/footer/footer.component");
 var homepage_component_1 = require("./components/homepage/homepage.component");
 var paypal_component_1 = require("./components/paypal/paypal.component");
 var films_card_component_1 = require("./components/films-card/films-card.component");
+var forum_component_1 = require("./components/forum/forum.component");
+var thread_component_1 = require("./components/forum/thread.component");
 var app_routing_1 = require("./routing/app.routing");
+var pipe_service_1 = require("./services/pipe.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -45,7 +48,10 @@ AppModule = __decorate([
             footer_component_1.FooterComponent,
             homepage_component_1.HomePageComponent,
             films_card_component_1.FilmsCardComponent,
-            paypal_component_1.PaypalComponent
+            paypal_component_1.PaypalComponent,
+            pipe_service_1.SafePipe,
+            forum_component_1.ForumComponent,
+            thread_component_1.ThreadComponent
         ],
         bootstrap: [
             app_component_1.AppComponent

@@ -7,6 +7,55 @@ label{
     align-items: center;
     margin-top: 350px;
 }
+
+.sitemap{
+    background:#343a40;
+    height: 21.5vh;
+}
+.sitemapList {
+    margin:0;
+	padding:0;
+	float:left;
+	width:100%;
+}
+.sitemapList li {
+    display: inline;
+    padding: 0px;
+    margin: 0;
+    font-size: 0.9em;
+    background:#343a40;
+}
+.sitemapList a:link,
+.sitemapList a:visited {
+    color:#9a9d9e;
+	padding:40px 20px 20px 20px;
+	float:left;
+	width:auto;
+	text-decoration:none;
+}
+.sitemapList a:hover,
+.sitemapList a:focus {
+	color:white;
+}
+.copy{
+    text-align: center;
+    font-size: 0.8em;
+    color: #9a9d9e;
+    background: #343a40;
+    margin:0;
+}
+.siteTable{
+    display: table;
+    margin: 0 auto;
+
+}
+
+.container{
+    min-height: 79.5vh
+}
+
+
+
 table, tr, th, td {
     border: none;
 }
@@ -27,7 +76,7 @@ table, tr, th, td {
 .Display-film-tiles{
     list-style-type: none;
 }
-       
+
 .pic{
     width:255px;
     height:369px;
@@ -50,7 +99,7 @@ table, tr, th, td {
     display: -ms-flexbox;
     display: inline-flex;
 }
-	
+
 .film-tile-padding{
     padding:20px;
     padding-left: 40px;
@@ -58,11 +107,11 @@ table, tr, th, td {
     align-items: center;
     justify-content: center;
 }
-	   
+
 .film-title{
     padding-top:45px;
 }
-       
+
 .container {
     position:relative;
     margin: auto;
@@ -70,7 +119,7 @@ table, tr, th, td {
     padding: 10px;
 
 }
- 
+
 .background {
     margin: auto;
     height: 300px;
@@ -207,7 +256,7 @@ table, tr, th, td {
 
 #account-box .accountClose:active, #account-box .accountClose:hover {
 	  border: 2px solid #e84141;
-    color: #e84141;
+    background-color: pink;
 }
 
 .drop-down-information{
@@ -232,9 +281,21 @@ table, tr, th, td {
     left: 0px;
     height: 100%;
     z-index: 9998;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.85);
     color:#fff;
     padding: 20px 20px 20px 20px;
+}
+
+.iframe{
+  position:relative
+  margin:auto;
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
+.bookNowButtonDiv{
+  position: relative;
+  margin:auto;
 }
 
 .filmNameDisplay{
@@ -245,7 +306,7 @@ table, tr, th, td {
 .bookingHeading{
     padding-left: 50px;
     color: black;
-    
+
 }
 
 .bookingHeading2{
@@ -264,7 +325,7 @@ table, tr, th, td {
     padding-left: 50px;
     color: black;
     padding-top: 80px;
-    
+
 }
 
 .ticketDetailsSelection{
@@ -285,15 +346,15 @@ table, tr, th, td {
 }
 
 .setOut tr td:first-child{
-   width:150px; 
+   width:150px;
 }
 
 .setOut tr td:nth-child(2){
-     width:150px; 
+     width:150px;
 }
 
 .setOut tr td:nth-child(3){
-    
+
 }
 
 .setOut tr td:nth-child(4){
@@ -301,7 +362,7 @@ table, tr, th, td {
 }
 
 .setOut tr td:nth-child(5){
-     width:50px; 
+     width:50px;
 }
 
 .setOut2{
@@ -312,7 +373,7 @@ table, tr, th, td {
 }
 
 .setOut2 tr td:first-child{
-    width:350px; 
+    width:350px;
 }
 
 .removeButton {
@@ -349,7 +410,7 @@ table, tr, th, td {
     background: #fcfcfc
 }
 
-.dropdownBooking:hover { 
+.dropdownBooking:hover {
     background-color: whitesmoke;
 }
 
@@ -387,8 +448,6 @@ table, tr, th, td {
 }
 
 .mapTable tr td{
-    width:400px; 
+    width:400px;
     padding: 10px;
 }
-
-

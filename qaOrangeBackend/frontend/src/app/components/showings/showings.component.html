@@ -1,0 +1,41 @@
+<!-- nathan -->
+<h1>Showings</h1>
+<div class="mdl-color--grey-700 test"  >
+  <div class="mdl-grid film-grid" >
+    <div *ngFor="let film of films; let i=index" class="mdl-cell mdl-card mdl-color--black" style="width:255px;" >
+      <div class="mdl-card__media" (click)="onSelect(film)" >
+        <img id="1" class="pic"  alt={{film.film_name}} src={{film.img}}/>
+      </div>
+      <div class="mdl-card__title mdl-color-text--white">
+        <h4 class="mdl-card__title-text">{{film.film_name}}</h4>
+        <img id="2" height="30px" width="30px" class="age-rating-logo" alt={{film.rating_name}} src={{film.age_rating}}/>
+      </div>
+      <div class="mdl-card__supporting-text mdl-color-text--white">{{film.quote}}</div>
+    </div>
+    <div class="popUpInfoBox" *ngIf="isActive">
+
+			<div class="Pop-Up-information" >
+				<div class="filmInfoCloseButton"  >
+					<button class="accountClose" style="color: black" (click)="onClose()" >X</button>
+        </div>
+
+				<h2>{{filmName}}</h2>
+				<div>{{filmDesc}}</div>
+        <div >
+				 <iframe class="iframe" title="trailer" width="800" height="450" [src]="trailer | safe" frameBorder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="bookNowButtonDiv">
+          <a routerLink="/booking" activeclass="active">
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" (click)="onClickBook()" >Book now</button>
+          </a>
+        </div>
+
+				<!-- <p></p> -->
+				<!-- <Reviews comments={{film.comments}}/> -->
+			</div>
+    </div>
+  </div>
+</div>
+<!-- (click)="onSelect()" -->
+<!-- (click)="toggleIsActive()" -->

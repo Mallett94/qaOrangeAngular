@@ -10,11 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 //user.components.ts
 var core_1 = require("@angular/core");
-var posts_service_1 = require("../../services/posts.service");
+var api_service_1 = require("../../services/api.service");
 var UserComponent = (function () {
-    function UserComponent(postsService) {
+    function UserComponent(apiService) {
         var _this = this;
-        this.postsService = postsService;
+        this.apiService = apiService;
         this.name = 'Nathan',
             this.email = 'nmallett94@gmail.com',
             this.address = {
@@ -24,8 +24,9 @@ var UserComponent = (function () {
             };
         this.hobbies = ['Sports', 'Reading fiction', 'Video games'],
             this.showHobbies = false;
-        this.postsService.getPosts().subscribe(function (posts) {
+        this.apiService.getPosts().subscribe(function (posts) {
             _this.posts = posts;
+            console.log(posts);
         });
     }
     UserComponent.prototype.toggleHobbies = function () {
@@ -44,9 +45,9 @@ UserComponent = __decorate([
         moduleId: module.id,
         selector: 'user',
         templateUrl: 'user.component.html',
-        providers: [posts_service_1.PostsService]
+        providers: [api_service_1.ApiService]
     }),
-    __metadata("design:paramtypes", [posts_service_1.PostsService])
+    __metadata("design:paramtypes", [api_service_1.ApiService])
 ], UserComponent);
 exports.UserComponent = UserComponent;
 //# sourceMappingURL=user.component.js.map
