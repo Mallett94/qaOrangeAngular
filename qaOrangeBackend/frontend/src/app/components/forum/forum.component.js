@@ -25,7 +25,7 @@ var ForumComponent = (function () {
 ForumComponent = __decorate([
     core_1.Component({
         selector: 'forum',
-        template: "\n    <a *ngFor='let thread of threads' [routerLink]=\"['/thread', thread.id]\">{{thread.title}}</a>\n  ",
+        template: "\n    <li>\n      <ul *ngFor='let thread of threads'><a [routerLink]=\"['/thread', thread.id]\">{{thread.title}}</a></ul>\n    </li>\n  ",
         providers: [thread_service_1.ThreadService]
     }),
     __metadata("design:paramtypes", [thread_service_1.ThreadService])
