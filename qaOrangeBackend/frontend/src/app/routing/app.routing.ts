@@ -7,13 +7,15 @@ import { ShowingsComponent } from '../components/showings/showings.component';
 import { AboutComponent } from '../components/about/about.component';
 import { ContactComponent } from '../components/contact/contact.component';
 import { BookingComponent } from '../components/booking/booking.component';
+import { HomePageComponent} from '../components/homepage/homepage.component';
 import { ForumComponent } from '../components/forum/forum.component';
 import { ThreadComponent } from '../components/forum/thread.component';
+
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: UserComponent
+    component: HomePageComponent
   },
   {
     path: 'showings',

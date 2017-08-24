@@ -1,16 +1,16 @@
 "use strict";
 var router_1 = require("@angular/router");
-var user_component_1 = require("../components/test/user.component");
 var showings_component_1 = require("../components/showings/showings.component");
 var about_component_1 = require("../components/about/about.component");
 var contact_component_1 = require("../components/contact/contact.component");
 var booking_component_1 = require("../components/booking/booking.component");
+var homepage_component_1 = require("../components/homepage/homepage.component");
 var forum_component_1 = require("../components/forum/forum.component");
 var thread_component_1 = require("../components/forum/thread.component");
 var appRoutes = [
     {
         path: '',
-        component: user_component_1.UserComponent
+        component: homepage_component_1.HomePageComponent
     },
     {
         path: 'showings',

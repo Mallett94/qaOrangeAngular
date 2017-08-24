@@ -11,6 +11,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HomePageComponent } from './components/homepage/homepage.component';
+import { PaypalComponent } from './components/paypal/paypal.component';
+import { FilmsCardComponent} from './components/films-card/films-card.component';
 import { ForumComponent } from './components/forum/forum.component';
 import { ThreadComponent } from './components/forum/thread.component';
 
@@ -34,6 +37,9 @@ import { ApiService } from './services/api.service';
     NavbarComponent,
     BookingComponent,
     FooterComponent,
+    HomePageComponent,
+    FilmsCardComponent,
+    PaypalComponent,
     SafePipe,
     ForumComponent,
     ThreadComponent

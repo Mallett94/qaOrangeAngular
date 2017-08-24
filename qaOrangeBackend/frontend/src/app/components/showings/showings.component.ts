@@ -39,6 +39,7 @@ export class ShowingsComponent implements OnInit {
 
   }
 
+
   onSelect(film) {
     this.toggleIsActive();
     this.filmName = film.film_name;
