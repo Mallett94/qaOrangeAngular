@@ -21,12 +21,8 @@ var PostsService = (function () {
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.getLocations = function () {
-        var _this = this;
         return this.http.get('/Assets/json/Locations.json')
-            .map(function (res) { return res.json(); })
-            .map(function (data) {
-            return _this._data = data;
-        });
+            .map(function (res) { return res.json(); });
     };
     return PostsService;
 }());

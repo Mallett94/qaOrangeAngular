@@ -12,6 +12,10 @@ import {PostsService} from '../../services/posts.service'
         {{location.location}}
       </li>
     </ul>
+
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </v>
   </div>
   `,
   providers:[PostsService]
@@ -19,6 +23,9 @@ import {PostsService} from '../../services/posts.service'
 
 export class AboutComponent  {
   locations : Location[];
+
+  lat: number = 0;
+  lng: number = 0;
 
   constructor(private postsService: PostsService){
     this.postsService.getLocations().subscribe(locations =>{

@@ -14,6 +14,8 @@ var AboutComponent = (function () {
     function AboutComponent(postsService) {
         var _this = this;
         this.postsService = postsService;
+        this.lat = 0;
+        this.lng = 0;
         this.postsService.getLocations().subscribe(function (locations) {
             _this.locations = locations;
         });
@@ -23,7 +25,7 @@ var AboutComponent = (function () {
 AboutComponent = __decorate([
     core_1.Component({
         selector: 'about',
-        template: "\n  <h3>About Us</h3>\n  <div>\n    We have Cinemas at various locations:\n    <ul>\n      <li *ngFor=\"let location of locations\">\n        {{location.location}}\n      </li>\n    </ul>\n  </div>\n  ",
+        template: "\n  <h3>About Us</h3>\n  <div>\n    We have Cinemas at various locations:\n    <ul>\n      <li *ngFor=\"let location of locations\">\n        {{location.location}}\n      </li>\n    </ul>\n\n    <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </v>\n  </div>\n  ",
         providers: [posts_service_1.PostsService]
     }),
     __metadata("design:paramtypes", [posts_service_1.PostsService])

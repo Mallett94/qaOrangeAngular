@@ -17,8 +17,5 @@ export class PostsService {
   getLocations(){
     return this.http.get('/Assets/json/Locations.json')
       .map(res => res.json())
-      .map( (data) => 
-      this._data = data
-    )
   }
 }
