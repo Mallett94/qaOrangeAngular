@@ -18,7 +18,7 @@
 				<div class="filmInfoCloseButton"  >
 					<button class="accountClose" style="color: black" (click)="onClose()" >X</button>
         </div>
-        
+
 				<h2>{{filmName}}</h2>
 				<div>{{filmDesc}}</div>
         <div >
@@ -27,7 +27,7 @@
 
         <div class="bookNowButtonDiv">
           <a routerLink="/booking" activeclass="active">
-						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" >Book now</button>
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" (click)="onClickBook()" >Book now</button>
           </a>
         </div>
 

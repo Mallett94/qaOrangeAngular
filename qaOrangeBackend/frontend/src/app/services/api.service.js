@@ -12,18 +12,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
+var Subject_1 = require("rxjs/Subject");
 var ApiService = (function () {
+    // public bookingSubject = new AsyncSubject<any>();
+    //notifyObservable$ = this.bookingSubject.asObservable();
     //_data;
     function ApiService(http) {
         this.http = http;
-        console.log('apiService Initialized...');
+        this.bookingSubject = new Subject_1.Subject();
+        //console.log('apiService Initialized...')
     }
     ApiService.prototype.getPosts = function () {
         return this.http.get('https://jsonplaceholder.typicode.com/posts')
             .map(function (res) { return res.json(); });
     };
     ApiService.prototype.getFilms = function () {
-        console.log('gettings FilmList');
         return this.http.get('../../json/Films_All.json')
             .map(function (res) { return res.json(); });
     };
@@ -33,6 +36,18 @@ var ApiService = (function () {
         // .map( (data) =>
         // this._data = data
         //)
+    };
+    ApiService.prototype.getFilmName = function (data) {
+        console.log(data);
+        // console.log(this.bookingSubject)
+        // this.bookingSubject.subscribe(
+        //   res => console.log(res)
+        // )
+        this.bookingSubject.next(data);
+        return this.checkStatus();
+    };
+    ApiService.prototype.checkStatus = function () {
+        console.log(this.bookingSubject);
     };
     return ApiService;
 }());

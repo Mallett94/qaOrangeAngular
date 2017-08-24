@@ -2,13 +2,19 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Subject } from 'rxjs/Subject';
+import { AsyncSubject } from 'rxjs/AsyncSubject';
 
 
 @Injectable()
 export class ApiService {
+
+  public bookingSubject = new Subject<string>();
+  // public bookingSubject = new AsyncSubject<any>();
+  //notifyObservable$ = this.bookingSubject.asObservable();
   //_data;
   constructor(private http: Http) {
-    console.log('apiService Initialized...')
+    //console.log('apiService Initialized...')
   }
 
   getPosts() {
@@ -17,7 +23,6 @@ export class ApiService {
   }
 
   getFilms() {
-    console.log('gettings FilmList');
     return this.http.get('../../json/Films_All.json')
       .map(res => res.json());
   }
@@ -29,5 +34,20 @@ export class ApiService {
       // this._data = data
     //)
   }
+
+  getFilmName(data) {
+    console.log(data)
+    // console.log(this.bookingSubject)
+    // this.bookingSubject.subscribe(
+    //   res => console.log(res)
+    // )
+    this.bookingSubject.next(data);
+    return this.checkStatus();
+  }
+
+  checkStatus(){
+    console.log(this.bookingSubject);
+  }
+
 
 }

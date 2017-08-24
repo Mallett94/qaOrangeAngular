@@ -13,24 +13,30 @@ var core_1 = require("@angular/core");
 var api_service_1 = require("../../services/api.service");
 var ShowingsComponent = (function () {
     function ShowingsComponent(apiService) {
-        var _this = this;
         this.apiService = apiService;
-        this.apiService.getFilms().subscribe(function (films) {
-            _this.films = films;
-            console.log(_this.films);
-        });
         this.isActive = false;
         this.filmName = '';
         this.filmDesc = '';
         this.trailer = undefined;
         this.comments = [''];
     }
+    ShowingsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.apiService.getFilms()
+            .subscribe(function (films) { return _this.films = films; });
+        // this.apiService.bookingSubject.subscribe(
+        //   res => console.log(res)
+        //   //data => this.filmName = data
+        //   )
+    };
     ShowingsComponent.prototype.onSelect = function (film) {
         this.toggleIsActive();
         this.filmName = film.film_name;
         this.filmDesc = film.film_description;
         this.trailer = film.trailer;
         this.comments = film.comments;
+        // console.log(film);
+        // this.apiService.getFilmName(film)
     };
     ShowingsComponent.prototype.onClose = function () {
         this.toggleIsActive();
@@ -40,9 +46,11 @@ var ShowingsComponent = (function () {
         this.comments = [''];
     };
     ShowingsComponent.prototype.toggleIsActive = function () {
-        console.log('isActive= ' + this.isActive);
         this.isActive = !this.isActive;
-        console.log('isActive= ' + this.isActive);
+    };
+    ShowingsComponent.prototype.onClickBook = function () {
+        // console.log(this.filmName);
+        this.apiService.getFilmName(this.filmName);
     };
     return ShowingsComponent;
 }());

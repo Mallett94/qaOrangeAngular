@@ -9,8 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var api_service_1 = require("../../services/api.service");
+//import { Subscription } from 'rxjs/Subscription';
 var BookingComponent = (function () {
-    function BookingComponent() {
+    function BookingComponent(apiService) {
+        this.apiService = apiService;
+        // this.filmName = 'test'
         this.showBasket = false;
         this.adultTicketQuantity = 0;
         this.kidsTicketQuantity = 0;
@@ -24,6 +28,13 @@ var BookingComponent = (function () {
         this.sProgress = 0;
         this.progressComplete = false;
     }
+    BookingComponent.prototype.ngOnInit = function () {
+        console.log('film name from showings page should appear below');
+        this.apiService.bookingSubject.subscribe(function (res) { return console.log(res); });
+    };
+    // startBooking(){
+    //   this.apiService.getFilmName('test')
+    //   }
     BookingComponent.prototype.addToOrder = function () {
         this.showBasket = true;
     };
@@ -88,8 +99,9 @@ BookingComponent = __decorate([
     core_1.Component({
         selector: 'booking',
         templateUrl: './booking.component.html',
+        providers: [api_service_1.ApiService],
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [api_service_1.ApiService])
 ], BookingComponent);
 exports.BookingComponent = BookingComponent;
 ;

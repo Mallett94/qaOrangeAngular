@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
+
+//import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'booking',
   templateUrl: './booking.component.html',
+  providers: [ApiService],
 })
-export class BookingComponent  {
- 
-  filmName: string;
+export class BookingComponent implements OnInit {
+  filmName;
+  //private subscription: Subscription;
   location: string;
   day: string;
   time: string;
@@ -16,16 +20,17 @@ export class BookingComponent  {
   totalTicketQuantity: number;
   seats: string;
   showBasket: boolean;
-  vProgress : number; 
-  dProgress : number; 
+  vProgress : number;
+  dProgress : number;
   timeProgress : number;
   tickProgress : number;
   sProgress : number;
   totalProgress;
   progressComplete: boolean;
-  
 
-  constructor(){
+
+  constructor(private apiService: ApiService){
+    // this.filmName = 'test'
     this.showBasket = false;
     this.adultTicketQuantity = 0;
     this.kidsTicketQuantity = 0;
@@ -40,6 +45,19 @@ export class BookingComponent  {
     this.progressComplete =  false;
 
   }
+
+  ngOnInit() {
+    console.log('film name from showings page should appear below');
+    this.apiService.bookingSubject.subscribe(
+      res => console.log(res)
+      //data => this.filmName = data
+      )
+
+  }
+
+  // startBooking(){
+  //   this.apiService.getFilmName('test')
+  //   }
 
   addToOrder(){
     this.showBasket = true;
@@ -98,5 +116,5 @@ export class BookingComponent  {
   checkProgressComplete(){
     {(this.totalProgress == 100) ? this.progressComplete = true : this.progressComplete = false}
   }
-  
+
 };

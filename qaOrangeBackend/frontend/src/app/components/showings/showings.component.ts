@@ -1,5 +1,5 @@
 //nathan
-import { Component, Directive } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ApiService } from '../../services/api.service';
   providers: [ApiService],
 
 })
-export class ShowingsComponent  {
+export class ShowingsComponent implements OnInit {
   films: Film[];
   isActive: boolean;
   filmName: string;
@@ -18,16 +18,27 @@ export class ShowingsComponent  {
   comments: string[];
 
 
-  constructor(private apiService:ApiService){
-    this.apiService.getFilms().subscribe(films => {
-      this.films = films;
-      console.log(this.films);
-    });
+  constructor(public apiService:ApiService){
     this.isActive = false;
     this.filmName = '';
     this.filmDesc = '';
     this.trailer = undefined;
     this.comments = [''];
+  }
+
+  ngOnInit() {
+
+    this.apiService.getFilms()
+      .subscribe(
+        films => this.films = films
+        // films => console.log(films)
+    );
+
+    // this.apiService.bookingSubject.subscribe(
+    //   res => console.log(res)
+    //   //data => this.filmName = data
+    //   )
+
   }
 
   onSelect(film) {
@@ -36,6 +47,8 @@ export class ShowingsComponent  {
     this.filmDesc = film.film_description;
     this.trailer = film.trailer;
     this.comments = film.comments;
+    // console.log(film);
+    // this.apiService.getFilmName(film)
   }
 
   onClose() {
@@ -47,9 +60,12 @@ export class ShowingsComponent  {
 	}
 
   toggleIsActive() {
-    console.log('isActive= ' + this.isActive);
     this.isActive = !this.isActive;
-    console.log('isActive= ' + this.isActive);
+  }
+
+  onClickBook() {
+    // console.log(this.filmName);
+    this.apiService.getFilmName(this.filmName);
   }
 
 };
