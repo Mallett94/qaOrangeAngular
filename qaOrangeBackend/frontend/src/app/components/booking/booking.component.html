@@ -1,10 +1,12 @@
 <!-- Booking page by Marc -->
-<div class="jumbotron">
-    <h1>Booking</h1>
-    <p>Choose from all the latest films. In fact, why don't you treat someone.</p>
-    <p>{{filmName}}</p>
+<div class="jumbotron-background2">
+        <div class="jumbotron">
+                <h1>Booking</h1> 
+                <p>Choose from all the latest films.<br/> In fact, why don't you treat someone.</p> 
+            </div>
 </div>
-<button (click)="startBooking()" value='Display Film' >Display Film</button>
+    <button (click)="startBooking()" value='Display Film' >Display Film</button>
+
 <div class="progress progress-striped active">
         <div class="progress-bar" [style.width.%] = 'totalProgress'></div>
       </div>

@@ -3,17 +3,7 @@ import { ApiService } from '../../services/api.service'
 
 @Component({
   selector: 'about',
-  template: `
-  <h3>About Us</h3>
-  <div>
-    We have Cinemas at various locations:
-    <ul>
-      <li *ngFor="let location of locations">
-        {{location.location}}
-      </li>
-    </ul>
-  </div>
-  `,
+  templateUrl: './about.component.html',
   providers:[ApiService]
 })
 

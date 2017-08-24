@@ -1,7 +1,7 @@
 <!-- Nav Bar by Marc -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" routerLink="/">QA Cinemas</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" (click) = 'hideShow()' data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -25,3 +25,21 @@
       </ul>
     </div>
   </nav>
+
+  <div class = 'QA-ham-nav' *ngIf = 'toggleNav' (click) = 'hideShow()'>
+    <ul class = 'QA-ham-nav-list' (click) = 'hideShow()'>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/showings" routerLinkActive = 'active'>Films</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/booking" routerLinkActive = 'active'>Book</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about" routerLinkActive = 'active'>About</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive = 'active'>Contact</a>
+        </li>
+    </ul>
+    <hr>
+  </div>
