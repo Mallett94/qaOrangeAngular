@@ -5,7 +5,9 @@ import { ThreadService } from '../../services/thread.service';
 @Component({
   selector: 'forum',
   template: `
-    <a *ngFor='let thread of threads' [routerLink]="['/thread', thread.id]">{{thread.title}}</a>
+    <li>
+      <ul *ngFor='let thread of threads'><a [routerLink]="['/thread', thread.id]">{{thread.title}}</a></ul>
+    </li>
   `,
   providers: [ThreadService]
 })
