@@ -1,12 +1,12 @@
 //user.components.ts
 import { Component } from '@angular/core';
-import { PostsService } from '../../services/posts.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   moduleId: module.id,
   selector: 'user',
   templateUrl: 'user.component.html',
-  providers: [PostsService]
+  providers: [ApiService]
 })
 export class UserComponent {
   name: string;
@@ -17,7 +17,7 @@ export class UserComponent {
   posts: Post[];
 
 
-  constructor(private postsService: PostsService){
+  constructor(private apiService: ApiService){
     this.name = 'Nathan',
     this.email = 'nmallett94@gmail.com',
     this.address = {
@@ -28,8 +28,9 @@ export class UserComponent {
     this.hobbies = ['Sports', 'Reading fiction', 'Video games'],
     this.showHobbies = false;
 
-    this.postsService.getPosts().subscribe(posts => {
+    this.apiService.getPosts().subscribe(posts => {
       this.posts = posts;
+      console.log(posts);
 
     });
   }

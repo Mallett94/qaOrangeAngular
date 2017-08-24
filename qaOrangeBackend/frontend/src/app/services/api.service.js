@@ -8,23 +8,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+//nathan
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
-var PostsService = (function () {
-    function PostsService(http) {
+var ApiService = (function () {
+    //_data;
+    function ApiService(http) {
         this.http = http;
-        console.log('PostsService Initialized...');
+        console.log('apiService Initialized...');
     }
-    PostsService.prototype.getPosts = function () {
+    ApiService.prototype.getPosts = function () {
         return this.http.get('https://jsonplaceholder.typicode.com/posts')
             .map(function (res) { return res.json(); });
     };
-    return PostsService;
+    ApiService.prototype.getFilms = function () {
+        console.log('gettings FilmList');
+        return this.http.get('../../json/Films_All.json')
+            .map(function (res) { return res.json(); });
+    };
+    ApiService.prototype.getLocations = function () {
+        return this.http.get('../../json/Locations.json')
+            .map(function (res) { return res.json(); });
+        // .map( (data) =>
+        // this._data = data
+        //)
+    };
+    return ApiService;
 }());
-PostsService = __decorate([
+ApiService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
-], PostsService);
-exports.PostsService = PostsService;
-//# sourceMappingURL=posts.service.js.map
+], ApiService);
+exports.ApiService = ApiService;
+//# sourceMappingURL=api.service.js.map

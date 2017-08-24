@@ -1,0 +1,119 @@
+<!-- Booking page by Marc -->
+<div class="jumbotron">
+    <h1>Booking</h1> 
+    <p>Choose from all the latest films. In fact, why don't you treat someone.</p> 
+</div>
+
+<div class="progress progress-striped active">
+        <div class="progress-bar" [style.width.%] = 'totalProgress'></div>
+      </div>
+<div class = 'bookingSystem'>    
+    <div class = 'ticketDetailsSelection'>
+    <table class= 'setOut'>      
+        <tr>
+            <div class = "venueAndTimeSelection">
+                <td>
+                    <label>Venue</label>
+                </td>
+                <td>
+                    <select class = 'dropdownBooking' name='location' [(ngModel)]='location' (change) = 'checkVProgress(location)'>
+                    <option value="London" >London</option>
+                    <option value="Manchester">Manchester</option>
+                    <option value="Edinburgh">Edinburgh</option>
+                    </select>
+                </td>
+            <tr>
+                <td>
+                    <label>Day</label>
+                </td>
+                <td>
+                    <select class = 'dropdownBooking' name='day' [(ngModel)]='day' (change) = 'checkDProgress(day)'>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Time</label>
+                </td>
+                <td>
+                    <select class = 'dropdownBooking' name='time' [(ngModel)]='time' (change) = 'checkTimeProgress(time)'>
+                    <option value="12:00pm">12:00pm</option>
+                        <option value="1:00pm">1:00pm</option>
+                        <option value="2:00pm">2:00pm</option>
+                        <option value="3:00pm">3:00pm</option>
+                    </select>
+                </td>
+            </tr>
+            </div>
+        </tr>
+
+        <tr>
+            <div class = "ticketQuantitySelection">
+                <tr><td><label>Adult Tickets </label></td>
+                <td><input class = 'dropdownBooking' type='text' placeholder='0' id='test' name='adultTicketQuantity' [(ngModel)]='adultTicketQuantity' (change)='checkTotalTickets()'/></td>
+                <td><button class = "removeButton" (click)="resetAdults()">x</button></td></tr>        
+                
+                <tr><td><label>Kids Tickets </label></td>
+                <td><input class = 'dropdownBooking' type='text' placeholder='0' name='kidsTicketQuantity' [(ngModel)]='kidsTicketQuantity' (change) = 'checkTotalTickets()'/></td>
+                <td><button class = "removeButton" (click)="resetKids()">x</button></td></tr>
+                
+                <tr><td><label>Senior Tickets </label></td>
+                <td><input class = 'dropdownBooking' type='text' placeholder='0' name='seniorTicketQuantity' [(ngModel)]='seniorTicketQuantity' (change) = 'checkTotalTickets()'/></td>
+                <td><button class = "removeButton" (click)="resetSeniors()">x</button></td></tr>
+            </div>
+        </tr>
+        <tr>
+            <div class = "seatSelection">
+                <td>
+                        <label>Select Seating Area</label>
+                </td>
+                <td>
+                            <select class = 'dropdownBooking' name='seats' [(ngModel)]='seats' (change) = 'checkSProgress(seats)'>
+                            <option value="null" selected>-</option>
+                            <option value="Front Block">Front</option>
+                            <option value="Middle Block">Middle</option>
+                            <option value="Rear Block">Rear</option>
+                            </select>
+                </td>
+            </div>
+        </tr>
+    </table>
+
+    <br />
+        
+        <div class = "displayTicketSelection">
+        <div class = 'basket'>    
+            <br/>
+            <hr class = 'pageSplit' width = '75%'/>
+                <table class = 'setOut2'>      
+                    <tr>
+                        <td>
+            <!--    {this.state.isTotalActive ? -->
+                        <div class = "totalTicks">
+                            <h4>You would like {{adultTicketQuantity*1 + kidsTicketQuantity*1 + seniorTicketQuantity*1 | number}} ticket(s).</h4>
+                            <div class = 'ticketInfo' >
+                                Cinema: {{location}}<br />
+                                Time: {{day}} at {{time}}<br />
+                                Seats: {{seats}}<br />
+                                <h4>Price: £{{(adultTicketQuantity * 9.90) + (kidsTicketQuantity * 5.90) + (seniorTicketQuantity * 7.90) | number:'1.2-2'}}</h4>
+                            </div>
+                        </div> 
+                <!--  : <h4>Your basket is empty.</h4>} -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <div class = 'reviewAndPayButton' *ngIf = 'progressComplete'>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">REVIEW & PAY</button>
+                        </div>
+                    </tr>
+                </table>
+        </div> 
+        </div>
+</div>
