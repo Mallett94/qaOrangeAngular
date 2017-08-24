@@ -1,6 +1,10 @@
 label{
     font-size: 16px;
 }
+.general-text{
+    text-align: justify;
+    padding-bottom: 45px;
+}
 .loading {
     display: flex;
     justify-content: center;
@@ -47,13 +51,52 @@ label{
 .siteTable{
     display: table;
     margin: 0 auto;
+}
 
+.QA-ham-nav{
+    margin: 10px;
+    padding: 5px;
+}
+.QA-ham-nav-list{
+    list-style: none;
+}
+.QA-ham-nav-list li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.QA-ham-nav-list a{
+    color: #848484;
+    background: none;
+    display: inline;
+    padding: 5px;
+}
+.QA-ham-nav-list a:hover{
+    color: black;
+    font-size: 1.1em;
+}
+.navbar navbar-expand-md navbar-dark bg-dark fixed-top{
+    margin:0;
 }
 
 .container{
     min-height: 79.5vh
 }
-
+.jumbotron-background{
+    background-image: url('../../../img/bg1.jpg');
+    background-position: center;
+    background-size: 100%;
+}
+.jumbotron-background2{
+    background-image: url('../../../img/bg2.jpg');
+    background-position: center;
+    background-size: 100%;
+}
+.jumbotron img{
+    width:100%;
+}
+.jumbotron {
+    opacity: 0.6;
+}
 
 
 table, tr, th, td {

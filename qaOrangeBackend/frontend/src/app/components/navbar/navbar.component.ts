@@ -5,4 +5,16 @@ import { Component } from '@angular/core';
   selector: 'navbar',
   templateUrl: 'navbar.component.html',
 })
-export class NavbarComponent  {  }
+export class NavbarComponent  { 
+
+toggleNav: boolean;
+
+constructor(){
+  this.toggleNav = false;
+}
+
+  hideShow(){
+    this.toggleNav = !this.toggleNav;
+    console.log(this.toggleNav);
+  }
+ }

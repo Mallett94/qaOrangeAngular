@@ -23,7 +23,7 @@ var AboutComponent = (function () {
 AboutComponent = __decorate([
     core_1.Component({
         selector: 'about',
-        template: "\n  <h3>About Us</h3>\n  <div>\n    We have Cinemas at various locations:\n    <ul>\n      <li *ngFor=\"let location of locations\">\n        {{location.location}}\n      </li>\n    </ul>\n  </div>\n  ",
+        templateUrl: './about.component.html',
         providers: [api_service_1.ApiService]
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
