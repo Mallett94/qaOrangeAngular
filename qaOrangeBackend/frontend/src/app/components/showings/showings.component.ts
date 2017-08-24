@@ -41,13 +41,14 @@ export class ShowingsComponent implements OnInit {
 
   }
 
+
   onSelect(film) {
     this.toggleIsActive();
     this.filmName = film.film_name;
     this.filmDesc = film.film_description;
     this.trailer = film.trailer;
     this.comments = film.comments;
-    // console.log(film);
+     console.log(this.filmName);
     // this.apiService.getFilmName(film)
   }
 
@@ -65,6 +66,7 @@ export class ShowingsComponent implements OnInit {
 
   onClickBook() {
     // console.log(this.filmName);
+
     this.apiService.getFilmName(this.filmName);
   }
 
