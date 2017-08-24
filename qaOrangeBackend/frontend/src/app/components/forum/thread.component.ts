@@ -19,6 +19,7 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class ThreadComponent implements OnInit {
+  route;
   constructor(private threadService: ThreadService, route: ActivatedRoute, location: Location) {}
   @Input() thread: Thread;
   ngOnInit(): void {

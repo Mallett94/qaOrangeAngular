@@ -4,6 +4,7 @@ import { THREADS } from './mock-threads';
 
 @Injectable()
 export class ThreadService {
+  location;
   getThreads(): Promise<Thread[]> {
     console.log(THREADS);
     return Promise.resolve(THREADS);	
