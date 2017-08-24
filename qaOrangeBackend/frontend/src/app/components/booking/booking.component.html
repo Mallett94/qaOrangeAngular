@@ -1,8 +1,8 @@
 <!-- Booking page by Marc -->
 <div class="jumbotron-background2">
-        <div class="jumbotron">
-                <h1>Booking</h1> 
-                <p>Choose from all the latest films.<br/> In fact, why don't you treat someone.</p> 
+        <div class="jumbotron jumbotronOpacityLow">
+                <h1 style = 'color: white;'>Booking</h1> 
+                <p style = 'color: white;'>Choose from all the latest films.<br/> In fact, why don't you treat someone.</p> 
             </div>
 </div>
     <button (click)="startBooking()" value='Display Film' >Display Film</button>
@@ -102,9 +102,9 @@
                         <div class = "totalTicks">
                             <h4>You would like {{adultTicketQuantity*1 + kidsTicketQuantity*1 + seniorTicketQuantity*1 | number}} ticket(s).</h4>
                             <div class = 'ticketInfo' >
-                                Cinema: {{location}}<br />
-                                Time: {{day}} at {{time}}<br />
-                                Seats: {{seats}}<br />
+                                <h5>Cinema: {{location}}</h5>
+                                <h5>Time: {{day}} at {{time}}</h5>
+                                <h5>Seats: {{seats}}</h5>
                                 <h4>Price: £{{(adultTicketQuantity * 9.90) + (kidsTicketQuantity * 5.90) + (seniorTicketQuantity * 7.90) | number:'1.2-2'}}</h4>
                             </div>
                         </div>

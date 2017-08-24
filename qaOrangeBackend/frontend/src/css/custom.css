@@ -3,7 +3,7 @@ label{
 }
 .general-text{
     text-align: justify;
-    padding-bottom: 45px;
+    padding-bottom: 20px;
 }
 .loading {
     display: flex;
@@ -99,6 +99,9 @@ label{
 }
 .jumbotron h1, p{
     color: black;
+}
+.jumbotronOpacityLow {
+    background-color: rgba(89, 88, 88, 0.60)
 }
 
 
@@ -496,4 +499,16 @@ table, tr, th, td {
 .mapTable tr td{
     width:400px;
     padding: 10px;
+}
+
+.locationBox{
+    padding:10px;
+}
+
+.submitButton{
+    display: block;
+    margin: auto;
+}
+.submitDiv{
+    padding: 20px;
 }
