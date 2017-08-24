@@ -95,7 +95,10 @@ label{
     width:100%;
 }
 .jumbotron {
-    opacity: 0.6;
+    background-color: rgba(210, 210, 210, 0.3)
+}
+.jumbotron h1, p{
+    color: black;
 }
 
 
