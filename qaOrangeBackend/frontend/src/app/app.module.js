@@ -21,6 +21,7 @@ var forum_component_1 = require("./components/forum/forum.component");
 var thread_component_1 = require("./components/forum/thread.component");
 var app_routing_1 = require("./routing/app.routing");
 var pipe_service_1 = require("./services/pipe.service");
+var api_service_1 = require("./services/api.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -47,9 +48,12 @@ AppModule = __decorate([
             forum_component_1.ForumComponent,
             thread_component_1.ThreadComponent
         ],
+        providers: [
+            api_service_1.ApiService
+        ],
         bootstrap: [
             app_component_1.AppComponent
-        ]
+        ],
     })
 ], AppModule);
 exports.AppModule = AppModule;

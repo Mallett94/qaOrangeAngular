@@ -6,7 +6,6 @@ import { ApiService } from '../../services/api.service';
 @Component({
   selector: 'booking',
   templateUrl: './booking.component.html',
-  providers: [ApiService],
 })
 export class BookingComponent implements OnInit {
   filmName;
@@ -29,7 +28,7 @@ export class BookingComponent implements OnInit {
   progressComplete: boolean;
 
 
-  constructor(private apiService: ApiService){
+  constructor(public apiService:ApiService){
     // this.filmName = 'test'
     this.showBasket = false;
     this.adultTicketQuantity = 0;
@@ -49,15 +48,16 @@ export class BookingComponent implements OnInit {
   ngOnInit() {
     console.log('film name from showings page should appear below');
     this.apiService.bookingSubject.subscribe(
-      res => console.log(res)
+      res => this.filmName = res
       //data => this.filmName = data
       )
 
   }
 
-  // startBooking(){
-  //   this.apiService.getFilmName('test')
-  //   }
+  startBooking(){
+    this.apiService.getFilmName('test');
+    this.filmName = 'value should come from apiService';
+    }
 
   addToOrder(){
     this.showBasket = true;

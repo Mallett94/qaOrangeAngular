@@ -16,6 +16,7 @@ import { ThreadComponent } from './components/forum/thread.component';
 
 import { routing } from './routing/app.routing';
 import { SafePipe } from './services/pipe.service';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   imports:      [
@@ -37,9 +38,13 @@ import { SafePipe } from './services/pipe.service';
     ForumComponent,
     ThreadComponent
   ],
+  providers: [
+    ApiService
+  ],
   bootstrap:    [
     AppComponent
   ]
-
+  ,
+  // [ApiService]
 })
 export class AppModule { }

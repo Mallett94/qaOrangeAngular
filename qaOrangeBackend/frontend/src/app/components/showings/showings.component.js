@@ -24,10 +24,7 @@ var ShowingsComponent = (function () {
         var _this = this;
         this.apiService.getFilms()
             .subscribe(function (films) { return _this.films = films; });
-        // this.apiService.bookingSubject.subscribe(
-        //   res => console.log(res)
-        //   //data => this.filmName = data
-        //   )
+        this.apiService.bookingSubject.subscribe(function (res) { return console.log(res); });
     };
     ShowingsComponent.prototype.onSelect = function (film) {
         this.toggleIsActive();
@@ -36,7 +33,7 @@ var ShowingsComponent = (function () {
         this.trailer = film.trailer;
         this.comments = film.comments;
         // console.log(film);
-        // this.apiService.getFilmName(film)
+        // this.apiService.getFilmName(film.film_name);
     };
     ShowingsComponent.prototype.onClose = function () {
         this.toggleIsActive();
@@ -49,7 +46,7 @@ var ShowingsComponent = (function () {
         this.isActive = !this.isActive;
     };
     ShowingsComponent.prototype.onClickBook = function () {
-        // console.log(this.filmName);
+        console.log(this.filmName);
         this.apiService.getFilmName(this.filmName);
     };
     return ShowingsComponent;
@@ -59,7 +56,6 @@ ShowingsComponent = __decorate([
         moduleId: module.id,
         selector: 'showings',
         templateUrl: 'showings.component.html',
-        providers: [api_service_1.ApiService],
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
 ], ShowingsComponent);

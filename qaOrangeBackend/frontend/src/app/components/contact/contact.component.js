@@ -9,12 +9,46 @@ var core_1 = require("@angular/core");
 var ContactComponent = (function () {
     function ContactComponent() {
     }
+    ContactComponent.prototype.handleSubmit = function (e) {
+        e.preventDefault();
+    };
+    // storeAsJson(e) {
+    //   e.preventDefault();
+    //   let submission = {
+    //     honorific: this.honorific,
+    //     firstName: document.getElementById("firstName").value,
+    //     surname: document.getElementById('surname').value,
+    //     dob: document.getElementById("dob").value,
+    //     email: document.getElementById("email").value,
+    //     contactReason: this.reason,
+    //     message: document.getElementById("message").value
+    //   }
+    //   // Client.addToContactForm(submission);
+    //   let myJSON = JSON.stringify(submission);
+    //   localStorage.setItem("testJSON", myJSON);
+    //   document.getElementById("contactForm").reset();
+    // }
+    ContactComponent.prototype.outputJson = function () {
+        var text = localStorage.getItem("testJSON");
+        var submission = JSON.parse(text);
+        document.getElementById("comments").innerHTML += submission.honorific + " "
+            + submission.surname + " said:<br>"
+            + submission.message + "<br> <br>";
+    };
+    ContactComponent.prototype.getHonorific = function (e) {
+        this.honorific = e.target.value;
+        console.log(e.target.value);
+    };
+    ContactComponent.prototype.getReason = function (e) {
+        this.reason = e.target.value;
+        console.log(e.target.value);
+    };
     return ContactComponent;
 }());
 ContactComponent = __decorate([
     core_1.Component({
         selector: 'contact',
-        template: "\n  <h3>Contacts</h3>\n  <div>\n    Our contact details are: \n      <p>phone number: 01234 567890</p>\n      <p>email: QACinema@email.com</p>\n  </div>\n  ",
+        templateUrl: './contact.component.html',
     })
 ], ContactComponent);
 exports.ContactComponent = ContactComponent;

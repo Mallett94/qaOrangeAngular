@@ -1,20 +1,20 @@
 //nathan
-import { Injectable } from '@angular/core';
+import { Injectable, Pipe } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 import { AsyncSubject } from 'rxjs/AsyncSubject';
 
-
 @Injectable()
 export class ApiService {
 
-  public bookingSubject = new Subject<string>();
+  public bookingSubject = new AsyncSubject<string>();
   // public bookingSubject = new AsyncSubject<any>();
   //notifyObservable$ = this.bookingSubject.asObservable();
   //_data;
   constructor(private http: Http) {
-    //console.log('apiService Initialized...')
+    // , public apiService:ApiService
+    // this.apiService = apiService
   }
 
   getPosts() {
@@ -36,7 +36,7 @@ export class ApiService {
   }
 
   getFilmName(data) {
-    console.log(data)
+    // console.log(data)
     // console.log(this.bookingSubject)
     // this.bookingSubject.subscribe(
     //   res => console.log(res)

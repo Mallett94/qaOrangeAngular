@@ -29,12 +29,14 @@ var BookingComponent = (function () {
         this.progressComplete = false;
     }
     BookingComponent.prototype.ngOnInit = function () {
+        var _this = this;
         console.log('film name from showings page should appear below');
-        this.apiService.bookingSubject.subscribe(function (res) { return console.log(res); });
+        this.apiService.bookingSubject.subscribe(function (res) { return _this.filmName = res; });
     };
-    // startBooking(){
-    //   this.apiService.getFilmName('test')
-    //   }
+    BookingComponent.prototype.startBooking = function () {
+        this.apiService.getFilmName('test');
+        this.filmName = 'value should come from apiService';
+    };
     BookingComponent.prototype.addToOrder = function () {
         this.showBasket = true;
     };
@@ -99,7 +101,6 @@ BookingComponent = __decorate([
     core_1.Component({
         selector: 'booking',
         templateUrl: './booking.component.html',
-        providers: [api_service_1.ApiService],
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
 ], BookingComponent);
