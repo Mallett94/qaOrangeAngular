@@ -1,0 +1,58 @@
+<h4>Leave us feedback!</h4>
+
+<!-- <div>
+  Our contact details are:
+    <p>phone number: 01234 567890</p>
+    <p>email: QACinema@email.com</p>
+</div> -->
+
+<div id="formDiv">
+  <form class = "contactForm" id="contactForm" (submit)="handleSubmit($event)">
+    <table class="contactFormTable">
+      <tr class="formRow">
+        <td class="rowElement">Title:</td>
+        <td class="rowElement" id="honorific" value="select" (change)="this.getHonorific($event)"><select class="inputElement">
+              <option value="Select" >Select</option>
+              <option>Dr</option>
+              <option>Miss</option>
+              <option>Mr</option>
+              <option>Mrs</option>
+              <option>Ms</option>
+            </select></td>
+      </tr>
+      <tr class="formRow">
+        <td class="rowElement">First name:</td>
+        <td class="rowElement"><input type="text" class="inputElement" placeholder="Enter first name" id="firstName" /></td>
+      </tr>
+      <tr class="formRow">
+        <td class="rowElement">Surname:</td>
+        <td class="rowElement"><input type="text" class="inputElement" placeholder="Enter surname" id="surname" /></td>
+      </tr>
+      <tr class="formRow">
+        <td class="rowElement">Date of birth:</td>
+        <td class="rowElement"><input type="date" class="inputElement" id="dob" /></td>
+      </tr>
+      <tr class="formRow">
+        <td class="rowElement">E-Mail:</td>
+        <td class="rowElement"><input type="text" class="inputElement" placeholder="Enter email" id="email" /></td>
+      </tr>
+      <tr class="formRow">
+        <td class="rowElement" id="contactReason">Reason for contacting:</td>
+        <td class="rowElement" value="select" (change)="getReason($event)"><select class="inputElement">
+              <option>Select</option>
+              <option>Complaint</option>
+              <option>Report good experience</option>
+              <option>Suggestions</option>
+              <option>Other reason</option>
+            </select></td>
+      </tr>
+      <tr class="formRow">
+        <td class="rowElement">Message:</td>
+        <td class="rowElement"><textarea placeholder="Enter message here" id="message" ></textarea></td>
+      </tr>
+    </table>
+    <button type="submit" class="Btn" id="submit" >Submit</button>
+  </form>
+  <!-- <button type="text" class="Btn" (click)="this.outputJson()">View feedback</button> -->
+  <p id="comments" placeholder="Previous feedback:"></p>
+</div>
