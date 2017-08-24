@@ -47,11 +47,14 @@ label{
 .siteTable{
     display: table;
     margin: 0 auto;
+
 }
 
 .container{
     min-height: 79.5vh
 }
+
+
 
 table, tr, th, td {
     border: none;
@@ -278,9 +281,21 @@ table, tr, th, td {
     left: 0px;
     height: 100%;
     z-index: 9998;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.85);
     color:#fff;
     padding: 20px 20px 20px 20px;
+}
+
+.iframe{
+  position:relative
+  margin:auto;
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
+.bookNowButtonDiv{
+  position: relative;
+  margin:auto;
 }
 
 .filmNameDisplay{
