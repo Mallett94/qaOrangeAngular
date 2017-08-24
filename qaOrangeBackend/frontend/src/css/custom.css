@@ -10,6 +10,7 @@ label{
 
 .sitemap{
     background:#343a40;
+    height: 21.5vh;
 }
 .sitemapList {
     margin:0;
@@ -46,7 +47,6 @@ label{
 .siteTable{
     display: table;
     margin: 0 auto;
-    
 }
 
 .container{
