@@ -11,28 +11,34 @@ import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HomePageComponent } from './components/homepage/homepage.component';
+import  { PaypalComponent } from './components/paypal/paypal.component';
+import { FilmsCardComponent} from './components/films-card/films-card.component';
 
 import { routing } from './routing/app.routing';
 
 @NgModule({
-  imports:      [ 
-    BrowserModule, 
-    FormsModule, 
-    HttpModule, 
-    routing 
+  imports:      [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    routing
   ],
-  declarations: [ 
-    AppComponent, 
-    UserComponent, 
-    ShowingsComponent, 
-    AboutComponent, 
+  declarations: [
+    AppComponent,
+    UserComponent,
+    ShowingsComponent,
+    AboutComponent,
     ContactComponent,
     NavbarComponent,
     BookingComponent,
-    FooterComponent 
+    FooterComponent,
+    HomePageComponent,
+    FilmsCardComponent,
+    PaypalComponent
   ],
-  bootstrap:    [ 
-    AppComponent 
+  bootstrap:    [
+    AppComponent
   ]
 })
 export class AppModule { }

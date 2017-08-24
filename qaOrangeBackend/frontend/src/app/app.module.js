@@ -17,6 +17,9 @@ var contact_component_1 = require("./components/contact/contact.component");
 var navbar_component_1 = require("./components/navbar/navbar.component");
 var booking_component_1 = require("./components/booking/booking.component");
 var footer_component_1 = require("./components/footer/footer.component");
+var homepage_component_1 = require("./components/homepage/homepage.component");
+var paypal_component_1 = require("./components/paypal/paypal.component");
+var films_card_component_1 = require("./components/films-card/films-card.component");
 var app_routing_1 = require("./routing/app.routing");
 var AppModule = (function () {
     function AppModule() {
@@ -39,7 +42,10 @@ AppModule = __decorate([
             contact_component_1.ContactComponent,
             navbar_component_1.NavbarComponent,
             booking_component_1.BookingComponent,
-            footer_component_1.FooterComponent
+            footer_component_1.FooterComponent,
+            homepage_component_1.HomePageComponent,
+            films_card_component_1.FilmsCardComponent,
+            paypal_component_1.PaypalComponent
         ],
         bootstrap: [
             app_component_1.AppComponent
