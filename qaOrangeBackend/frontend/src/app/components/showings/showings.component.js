@@ -35,7 +35,7 @@ var ShowingsComponent = (function () {
         this.filmDesc = film.film_description;
         this.trailer = film.trailer;
         this.comments = film.comments;
-        // console.log(film);
+        console.log(this.filmName);
         // this.apiService.getFilmName(film)
     };
     ShowingsComponent.prototype.onClose = function () {
