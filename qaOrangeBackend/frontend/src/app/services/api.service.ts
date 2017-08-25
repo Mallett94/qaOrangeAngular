@@ -8,7 +8,7 @@ import { AsyncSubject } from 'rxjs/AsyncSubject';
 @Injectable()
 export class ApiService {
 
-  public bookingSubject = new AsyncSubject<string>();
+  public bookingSubject = new Subject<any>();
   // public bookingSubject = new AsyncSubject<any>();
   //notifyObservable$ = this.bookingSubject.asObservable();
   //_data;
@@ -36,7 +36,7 @@ export class ApiService {
   }
 
   getFilmName(data) {
-    // console.log(data)
+    console.log(data)
     // console.log(this.bookingSubject)
     // this.bookingSubject.subscribe(
     //   res => console.log(res)

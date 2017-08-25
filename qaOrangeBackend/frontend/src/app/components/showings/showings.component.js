@@ -24,7 +24,10 @@ var ShowingsComponent = (function () {
         var _this = this;
         this.apiService.getFilms()
             .subscribe(function (films) { return _this.films = films; });
-        this.apiService.bookingSubject.subscribe(function (res) { return console.log(res); });
+        this.apiService.bookingSubject.subscribe(function (res) {
+            _this.filmName = res;
+            console.log(res);
+        });
     };
     ShowingsComponent.prototype.onSelect = function (film) {
         this.toggleIsActive();
@@ -33,7 +36,7 @@ var ShowingsComponent = (function () {
         this.trailer = film.trailer;
         this.comments = film.comments;
         // console.log(film);
-        // this.apiService.getFilmName(film.film_name);
+        this.apiService.getFilmName(film.film_name);
     };
     ShowingsComponent.prototype.onClose = function () {
         this.toggleIsActive();
@@ -46,8 +49,9 @@ var ShowingsComponent = (function () {
         this.isActive = !this.isActive;
     };
     ShowingsComponent.prototype.onClickBook = function () {
-        console.log(this.filmName);
-        this.apiService.getFilmName(this.filmName);
+        // console.log(this.filmName);
+        // this.apiService.getFilmName(this.filmName);
+        return;
     };
     return ShowingsComponent;
 }());

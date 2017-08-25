@@ -31,6 +31,7 @@ export class BookingComponent implements OnInit {
 
 
   constructor(public apiService:ApiService){
+    // this.apiService = apiService;
     // this.filmName = 'test'
     this.showBasket = false;
     this.adultTicketQuantity = 0;
@@ -47,18 +48,25 @@ export class BookingComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    console.log('film name from showings page should appear below');
-    this.apiService.bookingSubject.subscribe(
-      res => this.filmName = res
-      //data => this.filmName = data
-      )
-
-  }
+  // ngOnInit() {
+    // this.apiService.bookingSubject.subscribe((res) => {
+    //   this.filmName = res;
+    //   console.log(res);
+    // });
+  //
+  //   this.apiService.bookingSubject.subscribe(
+  //     res => console.log(res)
+  //     )
+  //
+  // }
 
   startBooking(){
-    this.apiService.getFilmName('test');
-    this.filmName = 'value should come from apiService';
+    // this.apiService.getFilmName('test');
+    // this.filmName = 'value should come from apiService';
+    this.apiService.bookingSubject.subscribe((res) => {
+      this.filmName = res;
+      console.log(res);
+    });
     }
 
   addToOrder(){

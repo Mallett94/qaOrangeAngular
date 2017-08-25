@@ -31,11 +31,11 @@ export class ShowingsComponent implements OnInit {
         films => this.films = films
         // films => console.log(films)
     );
-
-    this.apiService.bookingSubject.subscribe(
-      res => console.log(res)
-      //data => this.filmName = data
-      )
+  
+    this.apiService.bookingSubject.subscribe((res) => {
+      this.filmName = res;
+      console.log(res);
+    });
 
   }
 
@@ -47,7 +47,7 @@ export class ShowingsComponent implements OnInit {
     this.trailer = film.trailer;
     this.comments = film.comments;
     // console.log(film);
-    // this.apiService.getFilmName(film.film_name);
+    this.apiService.getFilmName(film.film_name);
   }
 
   onClose() {
@@ -63,8 +63,9 @@ export class ShowingsComponent implements OnInit {
   }
 
   onClickBook() {
-    console.log(this.filmName);
-    this.apiService.getFilmName(this.filmName);
+    // console.log(this.filmName);
+    // this.apiService.getFilmName(this.filmName);
+    return
   }
 
 };

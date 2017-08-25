@@ -15,6 +15,7 @@ var api_service_1 = require("../../services/api.service");
 var BookingComponent = (function () {
     function BookingComponent(apiService) {
         this.apiService = apiService;
+        // this.apiService = apiService;
         // this.filmName = 'test'
         this.showBasket = false;
         this.adultTicketQuantity = 0;
@@ -29,14 +30,25 @@ var BookingComponent = (function () {
         this.sProgress = 0;
         this.progressComplete = false;
     }
-    BookingComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        console.log('film name from showings page should appear below');
-        this.apiService.bookingSubject.subscribe(function (res) { return _this.filmName = res; });
-    };
+    // ngOnInit() {
+    // this.apiService.bookingSubject.subscribe((res) => {
+    //   this.filmName = res;
+    //   console.log(res);
+    // });
+    //
+    //   this.apiService.bookingSubject.subscribe(
+    //     res => console.log(res)
+    //     )
+    //
+    // }
     BookingComponent.prototype.startBooking = function () {
-        this.apiService.getFilmName('test');
-        this.filmName = 'value should come from apiService';
+        var _this = this;
+        // this.apiService.getFilmName('test');
+        // this.filmName = 'value should come from apiService';
+        this.apiService.bookingSubject.subscribe(function (res) {
+            _this.filmName = res;
+            console.log(res);
+        });
     };
     BookingComponent.prototype.addToOrder = function () {
         this.showBasket = true;

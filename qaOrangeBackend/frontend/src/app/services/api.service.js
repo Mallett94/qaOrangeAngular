@@ -12,14 +12,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
-var AsyncSubject_1 = require("rxjs/AsyncSubject");
+var Subject_1 = require("rxjs/Subject");
 var ApiService = (function () {
     // public bookingSubject = new AsyncSubject<any>();
     //notifyObservable$ = this.bookingSubject.asObservable();
     //_data;
     function ApiService(http) {
         this.http = http;
-        this.bookingSubject = new AsyncSubject_1.AsyncSubject();
+        this.bookingSubject = new Subject_1.Subject();
         // , public apiService:ApiService
         // this.apiService = apiService
     }
@@ -39,7 +39,7 @@ var ApiService = (function () {
         //)
     };
     ApiService.prototype.getFilmName = function (data) {
-        // console.log(data)
+        console.log(data);
         // console.log(this.bookingSubject)
         // this.bookingSubject.subscribe(
         //   res => console.log(res)
