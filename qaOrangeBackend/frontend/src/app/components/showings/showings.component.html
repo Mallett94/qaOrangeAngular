@@ -1,6 +1,12 @@
-<!-- nathan -->
-<h1>Showings</h1>
-<div class="mdl-color--grey-700 test"  >
+<!-- Nathan + Marc css -->
+<div class="jumbotron-background3">
+  <div class = 'jumbotron jumbotronOpacityVeryLow'>
+    <h1 style = 'color: white;'>Showings</h1>
+    <p style = 'color: white;'>Choose from all the latest films.</p> 
+    
+  </div>
+</div>
+<div class="grid-outline test">
   <div class="mdl-grid film-grid" >
     <div *ngFor="let film of films; let i=index" class="mdl-cell mdl-card mdl-color--black" style="width:255px;" >
       <div class="mdl-card__media" (click)="onSelect(film)" >
@@ -12,18 +18,17 @@
       </div>
       <div class="mdl-card__supporting-text mdl-color-text--white">{{film.quote}}</div>
     </div>
-    <div class="popUpInfoBox" *ngIf="isActive">
 
+    <div class="popUpInfoBox" *ngIf="isActive">
+      <div class = 'container'>
 			<div class="Pop-Up-information" >
 				<div class="filmInfoCloseButton"  >
 					<button class="accountClose" style="color: black" (click)="onClose()" >X</button>
         </div>
 
-				<h2>{{filmName}}</h2>
-				<div>{{filmDesc}}</div>
-        <div >
+				<h1>{{filmName}}</h1>
+				<h5 class = 'textJustify'>{{filmDesc}}</h5>
 				 <iframe class="iframe" title="trailer" width="800" height="450" [src]="trailer | safe" frameBorder="0" allowfullscreen></iframe>
-        </div>
 
         <div class="bookNowButtonDiv">
           <a routerLink="/booking" activeclass="active">
@@ -33,7 +38,8 @@
 
 				<!-- <p></p> -->
 				<!-- <Reviews comments={{film.comments}}/> -->
-			</div>
+      </div>
+    </div>
     </div>
   </div>
 </div>

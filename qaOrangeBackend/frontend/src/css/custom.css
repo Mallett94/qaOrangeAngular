@@ -91,6 +91,16 @@ label{
     background-position: center;
     background-size: 100%;
 }
+.jumbotron-background3{
+    background-image: url('../../../img/bg4.jpg');
+    background-position: center;
+    background-size: 100%;
+}
+.jumbotron-background4{
+    background-image: url('../../../img/bg5.jpg');
+    background-position: center;
+    background-size: 100%;
+}
 .jumbotron img{
     width:100%;
 }
@@ -102,6 +112,9 @@ label{
 }
 .jumbotronOpacityLow {
     background-color: rgba(89, 88, 88, 0.60)
+}
+.jumbotronOpacityVeryLow {
+    background-color: rgba(89, 88, 88, 0.30)
 }
 
 
@@ -159,6 +172,12 @@ table, tr, th, td {
 
 .film-title{
     padding-top:45px;
+}
+
+.grid-outline{
+    background: whitesmoke;
+    padding: 10px;
+    margin-bottom: 30px;
 }
 
 .container {
@@ -326,24 +345,27 @@ table, tr, th, td {
 
 .Pop-Up-information{
     position: fixed;
-    top: 50px;
+    top: 0px;
     left: 0px;
     height: 100%;
     z-index: 9998;
     background: rgba(0, 0, 0, 0.85);
     color:#fff;
-    padding: 20px 20px 20px 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 50px;
 }
-
 .iframe{
-  position:relative
+  position:relative;
   margin:auto;
+  display: table;
   padding-top: 20px;
   padding-bottom: 20px
 }
 
 .bookNowButtonDiv{
   position: relative;
+  display: table;
   margin:auto;
 }
 
@@ -380,7 +402,7 @@ table, tr, th, td {
 .ticketDetailsSelection{
     background: white;
     padding-top: 25px;
-    padding-bottom: 150px;
+    padding-bottom: 20px;
 }
 
 .pageSplit{
@@ -511,4 +533,8 @@ table, tr, th, td {
 }
 .submitDiv{
     padding: 20px;
+}
+
+.textJustify{
+    text-align: justify;
 }

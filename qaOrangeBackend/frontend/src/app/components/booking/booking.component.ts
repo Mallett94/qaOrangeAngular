@@ -48,18 +48,15 @@ export class BookingComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('film name from showings page should appear below');
-    this.apiService.bookingSubject.subscribe(
-      res => this.filmName = res
-      //data => this.filmName = data
-      )
+    // console.log('film name from showings page should appear below');
+    // this.apiService.bookingSubject.subscribe(
+    //   res => this.filmName = res
+    //   //data => this.filmName = data
+    //   )
+
+    this.filmName = localStorage.getItem('filmName');
 
   }
-
-  startBooking(){
-    this.apiService.getFilmName('test');
-    this.filmName = 'value should come from apiService';
-    }
 
   addToOrder(){
     this.showBasket = true;

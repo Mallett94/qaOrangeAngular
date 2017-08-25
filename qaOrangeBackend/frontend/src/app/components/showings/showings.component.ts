@@ -32,10 +32,10 @@ export class ShowingsComponent implements OnInit {
         // films => console.log(films)
     );
 
-    this.apiService.bookingSubject.subscribe(
-      res => console.log(res)
-      //data => this.filmName = data
-      )
+    // this.apiService.bookingSubject.subscribe(
+    //   res => console.log(res)
+    //   //data => this.filmName = data
+    //   )
 
   }
 
@@ -64,7 +64,8 @@ export class ShowingsComponent implements OnInit {
 
   onClickBook() {
     console.log(this.filmName);
-    this.apiService.getFilmName(this.filmName);
+    // this.apiService.getFilmName(this.filmName);
+    localStorage.setItem('filmName',(this.filmName))
   }
 
 };
