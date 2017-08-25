@@ -23,7 +23,7 @@ app.set('view engine', 'hjs');
 //Films
 app.get('/FilmsAll', (req, res) => {
   mongoClient.connect('mongodb://localhost/cinemadb', function(err, db){
-    const FilmsAll = db.collection('films').find({film_name:'Dunkirk'}, {'__v':0, '_id':0}).toArray(function(err, docs){
+    const FilmsAll = db.collection('films').find({}, {'__v':0, '_id':0}).toArray(function(err, docs){
       filmsArray = docs;
     })
   });
