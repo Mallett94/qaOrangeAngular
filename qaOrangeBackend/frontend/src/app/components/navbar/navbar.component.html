@@ -5,10 +5,28 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-   
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/showings" routerLinkActive = 'active'>Films</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/booking" routerLinkActive = 'active'>Book</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive = 'active'>About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive = 'active'>Contact</a>
+        </li>
+	      <li class='nav-item'>
+          <a class='nav-link' routerLink='/forum' routerLinkActive='active'>Forum</a>
+	    </li>
+      </ul>
+    </div>
   </nav>
 
-  <div class = 'QA-ham-nav' *ngIf = 'toggleNav' (click) = 'hideShow()'>
+  <!-- <div class = 'QA-ham-nav' *ngIf = 'toggleNav' (click) = 'hideShow()'>
     <ul class = 'QA-ham-nav-list' (click) = 'hideShow()'>
       <li class="nav-item">
         <a class="nav-link" routerLink="/showings" routerLinkActive = 'active'>Films</a>
@@ -27,4 +45,4 @@
 	      </li>
     </ul>
     <hr>
-  </div>
+  </div> -->
