@@ -28,7 +28,7 @@ var ApiService = (function () {
             .map(function (res) { return res.json(); });
     };
     ApiService.prototype.getFilms = function () {
-        return this.http.get('../../json/Films_All.json')
+        return this.http.get('http://localhost:3002/FilmsAll')
             .map(function (res) { return res.json(); });
     };
     ApiService.prototype.getLocations = function () {
@@ -49,6 +49,17 @@ var ApiService = (function () {
     };
     ApiService.prototype.checkStatus = function () {
         console.log(this.bookingSubject);
+    };
+    // getFilms(cb) {
+    //   return fetch('/FilmsAll',{
+    //     //accept: 'application/json'
+    //   })
+    //     .then(this.parseJSON)
+    //     .then(cb);
+    //     //.map(res => res.json());
+    // }
+    ApiService.prototype.parseJSON = function (res) {
+        return res.json();
     };
     return ApiService;
 }());

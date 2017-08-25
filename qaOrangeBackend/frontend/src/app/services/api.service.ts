@@ -23,7 +23,7 @@ export class ApiService {
   }
 
   getFilms() {
-    return this.http.get('../../json/Films_All.json')
+    return this.http.get('http://localhost:3002/FilmsAll')
       .map(res => res.json());
   }
 
@@ -49,5 +49,17 @@ export class ApiService {
     console.log(this.bookingSubject);
   }
 
+  // getFilms(cb) {
+  //   return fetch('/FilmsAll',{
+  //     //accept: 'application/json'
+  //   })
+  //     .then(this.parseJSON)
+  //     .then(cb);
+  //     //.map(res => res.json());
+  // }
+
+  parseJSON(res){
+    return res.json();
+  }
 
 }
