@@ -30,6 +30,7 @@ var BookingComponent = (function () {
         this.sProgress = 0;
         this.progressComplete = false;
     }
+<<<<<<< HEAD
     // ngOnInit() {
     // this.apiService.bookingSubject.subscribe((res) => {
     //   this.filmName = res;
@@ -49,6 +50,15 @@ var BookingComponent = (function () {
             _this.filmName = res;
             console.log(res);
         });
+=======
+    BookingComponent.prototype.ngOnInit = function () {
+        // console.log('film name from showings page should appear below');
+        // this.apiService.bookingSubject.subscribe(
+        //   res => this.filmName = res
+        //   //data => this.filmName = data
+        //   )
+        this.filmName = localStorage.getItem('filmName');
+>>>>>>> 3a30d8327d5a1685908450f036019ce27d552c81
     };
     BookingComponent.prototype.addToOrder = function () {
         this.showBasket = true;

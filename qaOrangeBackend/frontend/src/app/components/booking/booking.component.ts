@@ -48,23 +48,22 @@ export class BookingComponent implements OnInit {
 
   }
 
-  // ngOnInit() {
-    // this.apiService.bookingSubject.subscribe((res) => {
-    //   this.filmName = res;
-    //   console.log(res);
-    // });
-  //
-  //   this.apiService.bookingSubject.subscribe(
-  //     res => console.log(res)
-  //     )
-  //
-  // }
+
+  ngOnInit() {
+    this.filmName = localStorage.getItem('filmName');
+
+    this.apiService.bookingSubject.subscribe(
+      // res => this.filmName = res
+      res => console.log(res)
+      )
+
+  }
 
   startBooking(){
     // this.apiService.getFilmName('test');
     // this.filmName = 'value should come from apiService';
     this.apiService.bookingSubject.subscribe((res) => {
-      this.filmName = res;
+      // this.filmName = res;
       console.log(res);
     });
     }

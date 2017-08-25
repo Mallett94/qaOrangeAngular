@@ -24,10 +24,17 @@ var ShowingsComponent = (function () {
         var _this = this;
         this.apiService.getFilms()
             .subscribe(function (films) { return _this.films = films; });
+<<<<<<< HEAD
         this.apiService.bookingSubject.subscribe(function (res) {
             _this.filmName = res;
             console.log(res);
         });
+=======
+        // this.apiService.bookingSubject.subscribe(
+        //   res => console.log(res)
+        //   //data => this.filmName = data
+        //   )
+>>>>>>> 3a30d8327d5a1685908450f036019ce27d552c81
     };
     ShowingsComponent.prototype.onSelect = function (film) {
         this.toggleIsActive();
@@ -49,9 +56,15 @@ var ShowingsComponent = (function () {
         this.isActive = !this.isActive;
     };
     ShowingsComponent.prototype.onClickBook = function () {
+<<<<<<< HEAD
         // console.log(this.filmName);
         // this.apiService.getFilmName(this.filmName);
         return;
+=======
+        console.log(this.filmName);
+        // this.apiService.getFilmName(this.filmName);
+        localStorage.setItem('filmName', (this.filmName));
+>>>>>>> 3a30d8327d5a1685908450f036019ce27d552c81
     };
     return ShowingsComponent;
 }());
