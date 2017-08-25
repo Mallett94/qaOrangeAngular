@@ -35,6 +35,10 @@ var ApiService = (function () {
         return this.http.get('http://localhost:3002/Locations')
             .map(function (res) { return res.json(); });
     };
+    ApiService.prototype.getPrices = function () {
+        return this.http.get('http://localhost:3002/Prices')
+            .map(function (res) { return res.json(); });
+    };
     ApiService.prototype.getFilmName = function (data) {
         // console.log(data)
         // console.log(this.bookingSubject)

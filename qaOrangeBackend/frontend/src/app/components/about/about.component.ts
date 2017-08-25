@@ -8,6 +8,7 @@ import { ApiService } from '../../services/api.service'
 
 export class AboutComponent  {
   locations : Location[];
+  prices : Price[];
 
   constructor(private apiService: ApiService){
 
@@ -18,6 +19,10 @@ export class AboutComponent  {
           .subscribe(
             locations => this.locations = locations
         );
+        this.apiService.getPrices()
+        .subscribe(
+          prices => this.prices = prices
+          );
       }
 };
 
@@ -26,4 +31,9 @@ interface Location{
   location: string;
   lat: number;
   lng: number;
+}
+
+interface Price{
+  price_category: string;
+  price: number;
 }

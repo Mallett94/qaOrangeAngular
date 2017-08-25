@@ -32,6 +32,11 @@ export class ApiService {
       .map(res => res.json());
   }
 
+  getPrices() {
+    return this.http.get('http://localhost:3002/Prices')
+      .map(res => res.json());
+  }
+
   getFilmName(data) {
     // console.log(data)
     // console.log(this.bookingSubject)

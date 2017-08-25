@@ -14,7 +14,7 @@ export class BookingComponent implements OnInit {
   //private subscription: Subscription;
   venues: Venue[];
   selectedVenue: string;
-  //day: string;
+  day: string;
   time: string;
   adultTicketQuantity: number;
   kidsTicketQuantity: number;
@@ -54,16 +54,11 @@ export class BookingComponent implements OnInit {
     //   res => this.filmName = res
     //   //data => this.filmName = data
     //   )
-
     this.apiService.getLocations()
       .subscribe(
          locations => this.venues = locations
-       // locations => console.log(locations)
       );
-      // console.log(this.venues);
-
     this.filmName = localStorage.getItem('filmName');
-
   }
 
   addToOrder(){

@@ -26,15 +26,14 @@ Over the years QA has won numerous accolades for its service and innovations, in
             <h5>{{location.location}}</h5>
           </li>
         </ul>
-      </div>
 
-      <div class = 'locationBox'>
-            Pricing:
-            <br>
-            <ul>
-              <li *ngFor="let location of locations">
-                <h5>{{location.location}}</h5>
-              </li>
-            </ul>
-          </div>
+        Pricing:
+        <br>
+        <ul>
+          <li *ngFor="let price of prices">
+            <h5>{{price.price_category}} £{{price.price}}</h5>
+          </li>
+        </ul>
+
+      </div>
 

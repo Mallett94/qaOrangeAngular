@@ -18,6 +18,8 @@ var AboutComponent = (function () {
         var _this = this;
         this.apiService.getLocations()
             .subscribe(function (locations) { return _this.locations = locations; });
+        this.apiService.getPrices()
+            .subscribe(function (prices) { return _this.prices = prices; });
     };
     return AboutComponent;
 }());
