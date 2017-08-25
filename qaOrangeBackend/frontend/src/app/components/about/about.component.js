@@ -12,19 +12,19 @@ var core_1 = require("@angular/core");
 var api_service_1 = require("../../services/api.service");
 var AboutComponent = (function () {
     function AboutComponent(apiService) {
-        var _this = this;
         this.apiService = apiService;
-        this.apiService.getLocations().subscribe(function (locations) {
-            _this.locations = locations;
-        });
     }
+    AboutComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.apiService.getLocations()
+            .subscribe(function (locations) { return _this.locations = locations; });
+    };
     return AboutComponent;
 }());
 AboutComponent = __decorate([
     core_1.Component({
         selector: 'about',
         templateUrl: './about.component.html',
-        providers: [api_service_1.ApiService]
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
 ], AboutComponent);

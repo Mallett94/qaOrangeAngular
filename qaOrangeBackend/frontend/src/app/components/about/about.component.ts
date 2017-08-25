@@ -4,17 +4,21 @@ import { ApiService } from '../../services/api.service'
 @Component({
   selector: 'about',
   templateUrl: './about.component.html',
-  providers:[ApiService]
 })
 
 export class AboutComponent  {
   locations : Location[];
 
   constructor(private apiService: ApiService){
-    this.apiService.getLocations().subscribe(locations =>{
-      this.locations = locations;
-    })
+
   }
+
+  ngOnInit() {
+        this.apiService.getLocations()
+          .subscribe(
+            locations => this.locations = locations
+        );
+      }
 };
 
 interface Location{

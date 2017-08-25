@@ -25,10 +25,11 @@
                     <label>Venue</label>
                 </td>
                 <td>
-                    <select class = 'dropdownBooking' name='location' [(ngModel)]='location' (change) = 'checkVProgress(location)'>
-                    <option value="London" >London</option>
+                    <select class = 'dropdownBooking' [(ngModel)]='selectedVenue' (change)='checkVProgress($event)'>
+                    <option *ngFor = 'let venue of venues; let i = index'  [value]='venue.location'>{{venue.location}}</option>
+                    <!-- <option value="London" >London</option>
                     <option value="Manchester">Manchester</option>
-                    <option value="Edinburgh">Edinburgh</option>
+                    <option value="Edinburgh">Edinburgh</option> -->
                     </select>
                 </td>
             <tr>
@@ -108,7 +109,7 @@
                         <div class = "totalTicks">
                             <h4>You would like {{adultTicketQuantity*1 + kidsTicketQuantity*1 + seniorTicketQuantity*1 | number}} ticket(s).</h4>
                             <div class = 'ticketInfo' >
-                                <h5>Cinema: {{location}}</h5>
+                                <h5>Cinema: {{selectedVenue}}</h5>
                                 <h5>Time: {{day}} at {{time}}</h5>
                                 <h5>Seats: {{seats}}</h5>
                                 <h4>Price: £{{(adultTicketQuantity * 9.90) + (kidsTicketQuantity * 5.90) + (seniorTicketQuantity * 7.90) | number:'1.2-2'}}</h4>

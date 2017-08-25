@@ -12,8 +12,9 @@ import { ApiService } from '../../services/api.service';
 export class BookingComponent implements OnInit {
   filmName;
   //private subscription: Subscription;
-  location: string;
-  day: string;
+  venues: Venue[];
+  selectedVenue: string;
+  //day: string;
   time: string;
   adultTicketQuantity: number;
   kidsTicketQuantity: number;
@@ -53,6 +54,13 @@ export class BookingComponent implements OnInit {
     //   res => this.filmName = res
     //   //data => this.filmName = data
     //   )
+
+    this.apiService.getLocations()
+      .subscribe(
+         locations => this.venues = locations
+       // locations => console.log(locations)
+      );
+      // console.log(this.venues);
 
     this.filmName = localStorage.getItem('filmName');
 
@@ -117,3 +125,10 @@ export class BookingComponent implements OnInit {
   }
 
 };
+
+interface Venue{
+  id: number;
+  location: string;
+  lat: number;
+  lng: number;
+}

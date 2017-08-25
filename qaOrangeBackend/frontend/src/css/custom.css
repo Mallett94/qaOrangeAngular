@@ -525,6 +525,7 @@ table, tr, th, td {
 
 .locationBox{
     padding:10px;
+    padding-bottom: 60px;
 }
 
 .submitButton{

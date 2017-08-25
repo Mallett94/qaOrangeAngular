@@ -35,6 +35,10 @@ var BookingComponent = (function () {
         //   res => this.filmName = res
         //   //data => this.filmName = data
         //   )
+        var _this = this;
+        this.apiService.getLocations()
+            .subscribe(function (locations) { return _this.venues = locations; });
+        // console.log(this.venues);
         this.filmName = localStorage.getItem('filmName');
     };
     BookingComponent.prototype.addToOrder = function () {

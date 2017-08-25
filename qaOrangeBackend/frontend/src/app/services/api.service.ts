@@ -27,12 +27,9 @@ export class ApiService {
       .map(res => res.json());
   }
 
-  getLocations(){ //michael
-    return this.http.get('../../json/Locations.json')
-      .map(res => res.json())
-      // .map( (data) =>
-      // this._data = data
-    //)
+  getLocations() {
+    return this.http.get('http://localhost:3002/Locations')
+      .map(res => res.json());
   }
 
   getFilmName(data) {
@@ -48,15 +45,6 @@ export class ApiService {
   checkStatus(){
     console.log(this.bookingSubject);
   }
-
-  // getFilms(cb) {
-  //   return fetch('/FilmsAll',{
-  //     //accept: 'application/json'
-  //   })
-  //     .then(this.parseJSON)
-  //     .then(cb);
-  //     //.map(res => res.json());
-  // }
 
   parseJSON(res){
     return res.json();
