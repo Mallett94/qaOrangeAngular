@@ -3,16 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "concurrently \"npm run backend\" \"npm run frontend\" \"npm run createdb\"",
+    "start": "concurrently  \"npm run backend\" \"npm run frontend\" ",
     "createdb": "node dbSchema.js",
-    "backend": "node ./bin/www",
+    "backend": "nodemon ./bin/www",
     "frontend": "cd frontend && npm start"
-
   },
   "dependencies": {
     "body-parser": "~1.17.1",
     "concurrently": "^3.5.0",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "hjs": "~0.0.6",

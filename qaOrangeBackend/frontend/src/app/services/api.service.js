@@ -31,6 +31,28 @@ var ApiService = (function () {
         return this.http.get('http://localhost:3002/FilmsAll')
             .map(function (res) { return res.json(); });
     };
+    // getFilms() {
+    //   return this.http.get('/FilmsAll', {
+    //     method: 'get',
+    //     mode: 'no-cors',
+    //   })
+    //     .map(res => res.json());
+    // }
+    // fetchFilms() {
+    //   return this.http.get('://localhost:3002/FilmsAll', {
+    //     mode: 'no-cors'
+    //   })
+    //     .then(this.parseJSON);
+    //     // .map(res => res.json());
+    // }
+    // testFetch(){
+    //   fetch('http://localhost:3002/FilmsAll', {
+    //     method: 'get',
+    //     mode: 'no-cors',
+    //   }).then(() => {
+    //     console.log('Works!');
+    //     });
+    // }
     ApiService.prototype.getLocations = function () {
         return this.http.get('http://localhost:3002/Locations')
             .map(function (res) { return res.json(); });
@@ -52,7 +74,8 @@ var ApiService = (function () {
         console.log(this.bookingSubject);
     };
     ApiService.prototype.parseJSON = function (res) {
-        return res.json();
+        return console.log(res + 'test');
+        // res.json();
     };
     return ApiService;
 }());

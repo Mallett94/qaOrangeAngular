@@ -1,6 +1,6 @@
 //nathan
 import { Injectable, Pipe } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 import { AsyncSubject } from 'rxjs/AsyncSubject';
@@ -27,6 +27,33 @@ export class ApiService {
       .map(res => res.json());
   }
 
+  // getFilms() {
+  //   return this.http.get('/FilmsAll', {
+  //     method: 'get',
+  //     mode: 'no-cors',
+  //   })
+  //     .map(res => res.json());
+  // }
+
+
+  // fetchFilms() {
+  //   return this.http.get('://localhost:3002/FilmsAll', {
+  //     mode: 'no-cors'
+  //   })
+  //     .then(this.parseJSON);
+  //     // .map(res => res.json());
+  // }
+
+  // testFetch(){
+  //   fetch('http://localhost:3002/FilmsAll', {
+  //     method: 'get',
+  //     mode: 'no-cors',
+  //   }).then(() => {
+  //     console.log('Works!');
+  //     });
+  // }
+  
+
   getLocations() {
     return this.http.get('http://localhost:3002/Locations')
       .map(res => res.json());
@@ -52,7 +79,8 @@ export class ApiService {
   }
 
   parseJSON(res){
-    return res.json();
+    return console.log(res+'test');
+    // res.json();
   }
 
 }

@@ -32,6 +32,9 @@ export class ShowingsComponent implements OnInit {
         // films => console.log(films)
     );
 
+    // this.apiService.testFetch();
+    // this.apiService.fetchFilms();
+
     // this.apiService.bookingSubject.subscribe(
     //   res => console.log(res)
     //   //data => this.filmName = data

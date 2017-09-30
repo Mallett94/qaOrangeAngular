@@ -55,9 +55,9 @@ export class BookingComponent implements OnInit {
     //   //data => this.filmName = data
     //   )
     this.apiService.getLocations()
-      .subscribe(
-         locations => this.venues = locations
-      );
+    .subscribe(
+      locations => this.venues = locations
+  );
     this.filmName = localStorage.getItem('filmName');
   }
 

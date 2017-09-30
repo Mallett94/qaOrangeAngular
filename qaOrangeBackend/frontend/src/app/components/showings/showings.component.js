@@ -24,6 +24,8 @@ var ShowingsComponent = (function () {
         var _this = this;
         this.apiService.getFilms()
             .subscribe(function (films) { return _this.films = films; });
+        // this.apiService.testFetch();
+        // this.apiService.fetchFilms();
         // this.apiService.bookingSubject.subscribe(
         //   res => console.log(res)
         //   //data => this.filmName = data
